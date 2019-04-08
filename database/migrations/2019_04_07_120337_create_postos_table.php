@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateInstrucoesTable extends Migration
+class CreatePostosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,11 @@ class CreateInstrucoesTable extends Migration
      */
     public function up()
     {
-        Schema::create('instrucoes', function (Blueprint $table) {
+        Schema::create('postos', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('titulo');
-            $table->string('texto');
+            $table->string('nome');
+            $table->longText('endereco');
+            $table->char('telefone');
             $table->timestamps();
         });
     }
@@ -28,6 +29,6 @@ class CreateInstrucoesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('instrucoes');
+        Schema::dropIfExists('postos');
     }
 }

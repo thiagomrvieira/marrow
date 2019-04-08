@@ -34,7 +34,7 @@ Route::prefix('usuario')->group(function(){
         return "USUÁRIO";
     });
     Route::get('novo', function(){
-        return view('novoUsuario');
+        return view('novoUsuarioz');
     }); 
     Route::get('editar', function(){
         return "EDITAR USUÁRIO";
@@ -42,4 +42,29 @@ Route::prefix('usuario')->group(function(){
     Route::get('excluir', function(){
         return "EXCLUIR USUÁRIO";
     });  
+});
+
+
+// -- POSTOS --
+
+Route::prefix('postos')->group(function(){
+    Route::get('/', 'PostosController@index');
+    Route::get('/novo', 'PostosController@create');
+    Route::post('/', 'PostosController@store');
+    Route::get('/editar/{id}', 'PostosController@edit'); 
+    Route::post('/{id}', 'PostosController@update'); 
+    Route::get('/apagar/{id}', 'PostosController@destroy'); 
+
+});
+
+// -- INSTRUÇÕES PARA DOAÇÃO --
+
+Route::prefix('instrucoes')->group(function(){
+    Route::get('/', 'InstrucoesController@index');
+    Route::get('/novo', 'InstrucoesController@create');
+    Route::post('/', 'InstrucoesController@store');
+    Route::get('/editar/{id}', 'InstrucoesController@edit'); 
+    Route::post('/{id}', 'InstrucoesController@update'); 
+    Route::get('/apagar/{id}', 'InstrucoesController@destroy'); 
+
 });
