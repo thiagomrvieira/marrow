@@ -68,3 +68,15 @@ Route::prefix('instrucoes')->group(function(){
     Route::get('/apagar/{id}', 'InstrucoesController@destroy'); 
 
 });
+
+// -- DISPONIBILIDADE --
+
+Route::prefix('disponibilidade')->group(function(){
+    Route::get('/', 'DisponibilidadeController@index');
+    Route::get('/novo', 'DisponibilidadeController@create');
+    Route::post('/', 'DisponibilidadeController@store');
+    Route::get('/editar/{id}', 'DisponibilidadeController@edit'); 
+    Route::post('/{id}', 'DisponibilidadeController@update'); 
+    Route::get('/apagar/{id}', 'DisponibilidadeController@destroy'); 
+
+});
