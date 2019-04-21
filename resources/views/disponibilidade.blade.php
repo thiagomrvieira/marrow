@@ -11,9 +11,10 @@
                     <tr>
                         <th>ID</th>
                         <th>Nome</th>
-                        <th>Tipo de doação</th>
                         <th>Tipo sanguíneo</th>
-                        <th>Disponibilidade</th>
+                        <th>Tipo de doação</th>
+                        <th>Data</th>
+                        <th>Hora</th>
                         <th>Ações</th>
                         
                     </tr>
@@ -23,8 +24,10 @@
                         <tr>
                             <td>{{$disp->id}}</td>
                             <td>{{$disp->usuario}}</td>
-                            <td>{{$disp->instrucoes}}</td>
-                            
+                            <td>{{$disp->tipoSangue}}</td>
+                            <td>{{$disp->tipoDoacao}}</td>
+                            <td>{{ date('d-m-Y', strtotime($disp->disponibilidade))}}</td>
+                            <td>{{ date('H:i', strtotime($disp->disponibilidade))}}</td>
                             <td>
                                 <a href="/disponibilidade/editar/{{$disp->id}}" class="btn btn-sm btn-primary">Editar</a>
                                 <a href="/disponibilidade/apagar/{{$disp->id}}" class="btn btn-sm btn-danger">Apagar</a>
@@ -38,7 +41,7 @@
     </div>
 
     <div class="card-footer">
-        <a href="/instrucoes/novo" class="btn btn-sm btn-primary" role="button">Nova instrução</a>
+        <a href="/disponibilidade/novo" class="btn btn-sm btn-primary" role="button">Novo</a>
     
     </div>
     

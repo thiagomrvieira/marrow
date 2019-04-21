@@ -15,10 +15,11 @@ class CreateDisponibilidadesTable extends Migration
     {
         Schema::create('disponibilidades', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('usuario');
+            $table->string('usuario')->nullable();
             $table->string('tipoDoacao');
-            $table->string('tipoSangue');
-            $table->string('disponibilidade');
+            $table->string('tipoSangue')->nullable();
+            $table->dateTime('disponibilidade');
+
             $table->timestamps();
         });
     }

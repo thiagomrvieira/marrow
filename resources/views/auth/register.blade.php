@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.app0')
 
 @section('content')
 <div class="container">
@@ -22,6 +22,27 @@
                                         <strong>{{ $errors->first('name') }}</strong>
                                     </span>
                                 @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="tipo" class="col-md-4 col-form-label text-md-right">{{ __('Tipo sanguíneo') }}</label>
+
+                            <div class="col-md-6">
+                                
+                                <select class="form-control" id="tipo" name="tipo" required >
+                                    <option>Não sei</option>
+                                    <option>A+</option>
+                                    <option>A-</option>
+                                    <option>B+</option>
+                                    <option>B-</option>
+                                    <option>AB+</option>
+                                    <option>AB-</option>
+                                    <option>O+</option>
+                                    <option>O-</option>
+
+                                </select>
+                                
                             </div>
                         </div>
 

@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Disponibilidade;
 
+//use App\Auth;
+
 class DisponibilidadeController extends Controller
 {
    /**
@@ -29,7 +31,7 @@ class DisponibilidadeController extends Controller
      */
     public function create()
     {
-        return view('instrucaoNovo');
+        return view('disponibilidadeNovo');
     }
 
     /**
@@ -40,11 +42,13 @@ class DisponibilidadeController extends Controller
      */
     public function store(Request $request)
     {
-        $instrucao = new Instrucao();
-        $instrucao->titulo = $request->input('titulo');
-        $instrucao->instrucoes = $request->input('instrucao');
-        $instrucao->save();
-        return redirect('instrucoes');
+        $dispo = new Disponibilidade();
+        $dispo->usuario = auth()->user()->name;
+        $dispo->tipoSangue = auth()->user()->tipo;
+        $dispo->tipoDoacao = $request->input('tipo');
+        $dispo->disponibilidade = $request->input('disponibilidade');
+        $dispo->save();
+        return redirect('disponibilidade');
 
     }
 
