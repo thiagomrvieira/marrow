@@ -71,9 +71,9 @@ class DisponibilidadeController extends Controller
      */
     public function edit($id)
     {
-        $instrucao = Instrucao::find($id);
-        if (isset($instrucao)) {
-            return view('instrucaoEditar', compact('instrucao'));
+        $dispo = Disponibilidade::find($id);
+        if (isset($dispo)) {
+            return view('disponibilidadeEditar', compact('dispo'));
         }
         
     }
@@ -87,13 +87,14 @@ class DisponibilidadeController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $instrucao = Instrucao::find($id);
-        if (isset($instrucao)) {
-            $instrucao->titulo = $request->input('titulo');
-            $instrucao->instrucoes = $request->input('instrucoes');
-            $instrucao->save();
-            return redirect('instrucoes');
-            
+        $dispo = Disponibilidade::find($id);
+        if (isset($dispo)) {
+            $dispo->tipoDoacao = $request->input('tipo');
+            if(!empty('disponibilidade')){
+                $dispo->disponibilidade = $request->input('disponibilidade');
+            }
+            $dispo->save();
+            return redirect('disponibilidade');
         }
     }
 
@@ -105,10 +106,10 @@ class DisponibilidadeController extends Controller
      */
     public function destroy($id)
     {
-        $instrucao = Instrucao::find($id);
-        if (isset($instrucao)) {
-            $instrucao->delete();
-            return redirect('instrucoes');
+        $dispo = Disponibilidade::find($id);
+        if (isset($dispo)) {
+            $dispo->delete();
+            return redirect('disponibilidade');
             
         }
     }
