@@ -80,3 +80,29 @@ Route::prefix('disponibilidade')->middleware('auth')->group(function(){
     Route::get('/apagar/{id}', 'DisponibilidadeController@destroy'); 
 
 });
+
+
+// -- USUÁRIOS --
+
+Route::prefix('usuarios')->middleware('auth')->group(function(){
+    Route::get('/', 'UsuarioController@index');
+    Route::get('/novo', 'DisponibilidadeController@create');
+    Route::post('/', 'DisponibilidadeController@store');
+    Route::get('/editar/{id}', 'DisponibilidadeController@edit'); 
+    Route::post('/{id}', 'DisponibilidadeController@update'); 
+    Route::get('/apagar/{id}', 'DisponibilidadeController@destroy'); 
+
+});
+
+
+// -- DOAÇÕES --
+
+Route::prefix('doacao')->middleware('auth')->group(function(){
+    Route::get('/', 'DoacaoController@index');
+    Route::get('/novo', 'DoacaoController@create');
+    Route::post('/', 'DoacaoController@store');
+    Route::get('/editar/{id}', 'DoacaoController@edit'); 
+    Route::post('/{id}', 'DoacaoController@update'); 
+    Route::get('/apagar/{id}', 'DoacaoController@destroy'); 
+
+});

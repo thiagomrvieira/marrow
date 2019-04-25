@@ -15,6 +15,10 @@ class CreateDoacaoTable extends Migration
     {
         Schema::create('doacao', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('doador');
+            $table->dateTime('dataDoacao');
+            $table->string('tipoDoacao');
+            $table->longText('observacao');
             $table->timestamps();
         });
     }
