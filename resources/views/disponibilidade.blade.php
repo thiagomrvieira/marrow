@@ -1,4 +1,105 @@
-@extends('layouts.app')
+@extends('layouts.dash')
+
+@section('body')
+    <div class="wrapper ">
+        
+        <!-- Sidebar -->
+        @component('sidebar')
+        @endcomponent
+      
+      
+        <div class="main-panel">
+            <!-- Navbar -->
+            @component('navbar')
+            @endcomponent
+            
+            <div class="content">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title"> Simple Table</h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <thead class=" text-primary">
+                                            <th>
+                                                Nome
+                                            </th>
+                                            <th>
+                                                Tipo sanguíneo
+                                            </th>
+                                            <th>
+                                                Tipo de doação
+                                            </th>
+                                            <th>
+                                                Data
+                                            </th>
+                                            <th>
+                                                Hora
+                                            </th>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    Dakota Rice
+                                                </td>
+                                                <td>
+                                                    Niger
+                                                </td>
+                                                <td>
+                                                    Oud-Turnhout
+                                                </td>
+                                                <td>
+                                                    $36,738
+                                                </td>
+                                                <td>
+                                                    $36,738
+                                                </td>
+                                            </tr>
+                                        
+                                            <tr>
+                                                <td>
+                                                    Jon Porter
+                                                </td>
+                                                <td>
+                                                    Portugal
+                                                </td>
+                                                <td>
+                                                    Gloucester
+                                                </td>
+                                                <td>
+                                                    $98,615
+                                                </td>
+                                                <td>
+                                                    $98,615
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- footer -->
+            @component('footer')
+            @endcomponent
+      
+        </div>
+    </div>
+    
+
+
+@endsection
+
+
+
+
+{{-- @extends('layouts.app')
 
 @section('body')
     <h1> Disponibilidade para doação </h1>
@@ -46,4 +147,4 @@
     </div>
     
 
-@endsection
+@endsection --}}
