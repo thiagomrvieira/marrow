@@ -26,7 +26,7 @@
         <li>
           <a href="/disponibilidade">
             <i class="nc-icon nc-calendar-60"></i>
-            <p>Agendar</p>
+            <p>Agendamento</p>
           </a>
         </li>
         <li>

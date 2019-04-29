@@ -18,7 +18,7 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title"> Simple Table</h4>
+                                <h4 class="card-title"> Seus agendamentos</h4>
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">
@@ -52,10 +52,10 @@
                                                     Oud-Turnhout
                                                 </td>
                                                 <td>
-                                                    $36,738
+                                                    01/02/2019
                                                 </td>
                                                 <td>
-                                                    $36,738
+                                                    11:30
                                                 </td>
                                             </tr>
                                         
@@ -70,20 +70,117 @@
                                                     Gloucester
                                                 </td>
                                                 <td>
-                                                    $98,615
+                                                    20/04/2019
                                                 </td>
                                                 <td>
-                                                    $98,615
+                                                    14:00
                                                 </td>
                                             </tr>
                                         </tbody>
                                     </table>
                                 </div>
-                          </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            
+                <!-- FORM -->
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card card-user">
+                            <div class="card-header">
+                                <h5 class="card-title">Fazer agendamento</h5>
+                            </div>
+                            <div class="card-body">
+                                <form>
+                                    <div class="row">
+                                        <div class="col-md-5 pr-1">
+                                            <div class="form-group">
+                                                <label>Nome (disabled)</label>
+                                                <input type="text" class="form-control" disabled="" placeholder="Company" value="Creative Code Inc.">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 px-1">
+                                            <div class="form-group">
+                                                <label>Tipo sanguíneo (disabled)</label>
+                                                <input type="text" class="form-control" disabled="" placeholder="tipoSangue" value="O+">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 pl-1">
+                                            <div class="form-group">
+                                                <label for="exampleInputEmail1">Email address (disabled)</label>
+                                                <input type="email" class="form-control" disabled="" placeholder="Email">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                    <div class="col-md-6 pr-1">
+                                        <div class="form-group">
+                                            <label>Tipo de doação</label>
+                                            <select class="form-control" id="tipo" name="tipo" type="text">
+                                                    <option>Doação de sangue</option>
+                                                    <option>Medula óssea</option>
+                                            </select>
+                                        
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 pl-1">
+                                        <div class="form-group">
+                                            <label>Posto de coleta</label>
+                                            <select class="form-control" id="tipo" name="tipo" type="text">
+                                                <option>Todos</option>    
+                                                <option>Hemopac</option>
+                                                <option>Uncisal</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    </div>
+                                    
+                                    <div class="row">
+                                    <div class="col-md-4 pr-1">
+                                        <div class="form-group">
+                                            <label for="disponibilidade">Dia e hora</label>
+                                            <input class="form-control" type="datetime-local" id="disponibilidade" name="disponibilidade">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 px-1">
+                                        <div class="form-group">
+                                            <label>Country</label>
+                                            <input type="text" class="form-control" placeholder="Country" value="Australia">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 pl-1">
+                                        <div class="form-group">
+                                            <label>Postal Code</label>
+                                            <input type="number" class="form-control" placeholder="ZIP Code">
+                                        </div>
+                                    </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label>Observações</label>
+                                                <textarea class="form-control textarea">Oh so, your weak rhyme You doubt I'll bother, reading into it</textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="update ml-auto mr-auto">
+                                            <button type="submit" class="btn btn-primary btn-round">Agendar</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                    
+            
+            </div><!-- Content -->
+
             
             <!-- footer -->
             @component('footer')
