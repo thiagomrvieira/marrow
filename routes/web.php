@@ -71,7 +71,7 @@ Route::prefix('instrucoes')->group(function(){
 
 // -- DISPONIBILIDADE --
 
-Route::prefix('disponibilidade')->middleware('auth')->group(function(){
+Route::prefix('agendamento')->middleware('auth')->group(function(){
     Route::get('/', 'DisponibilidadeController@index');
     Route::get('/novo', 'DisponibilidadeController@create');
     Route::post('/', 'DisponibilidadeController@store');

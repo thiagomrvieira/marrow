@@ -39,43 +39,33 @@
                                             <th>
                                                 Hora
                                             </th>
+                                            <th>
+                                                Observações
+                                            </th>
                                         </thead>
                                         <tbody>
+                                        @foreach ($dispo as $disp)
                                             <tr>
                                                 <td>
-                                                    Dakota Rice
+                                                    {{$disp->usuario}}
+                                                </td>
+                                                <td class="text-center">
+                                                    {{$disp->tipoSangue}}
                                                 </td>
                                                 <td>
-                                                    Niger
+                                                    {{$disp->tipoDoacao}}
+                                                </td>
+                                                <td class="text-center">
+                                                    {{ date('d-m-Y', strtotime($disp->disponibilidade))}}
+                                                </td>
+                                                <td class="text-center">
+                                                    {{ date('H:i', strtotime($disp->disponibilidade))}}
                                                 </td>
                                                 <td>
-                                                    Oud-Turnhout
-                                                </td>
-                                                <td>
-                                                    01/02/2019
-                                                </td>
-                                                <td>
-                                                    11:30
+                                                    {{$disp->observacoes}}
                                                 </td>
                                             </tr>
-                                        
-                                            <tr>
-                                                <td>
-                                                    Jon Porter
-                                                </td>
-                                                <td>
-                                                    Portugal
-                                                </td>
-                                                <td>
-                                                    Gloucester
-                                                </td>
-                                                <td>
-                                                    20/04/2019
-                                                </td>
-                                                <td>
-                                                    14:00
-                                                </td>
-                                            </tr>
+                                        @endforeach
                                         </tbody>
                                     </table>
                                 </div>
@@ -93,77 +83,64 @@
                                 <h5 class="card-title">Fazer agendamento</h5>
                             </div>
                             <div class="card-body">
-                                <form>
+                                <form action="/agendamento" method="POST">
+                                @csrf
                                     <div class="row">
                                         <div class="col-md-5 pr-1">
                                             <div class="form-group">
                                                 <label>Nome (disabled)</label>
-                                                <input type="text" class="form-control" disabled="" placeholder="Company" value="Creative Code Inc.">
+                                                <input type="text" class="form-control" disabled="" placeholder="Company" value="{{auth()->user()->name}}">
                                             </div>
                                         </div>
                                         <div class="col-md-3 px-1">
                                             <div class="form-group">
                                                 <label>Tipo sanguíneo (disabled)</label>
-                                                <input type="text" class="form-control" disabled="" placeholder="tipoSangue" value="O+">
+                                                <input type="text" class="form-control" disabled="" placeholder="tipoSangue" value="{{auth()->user()->tipo}}">
                                             </div>
                                         </div>
                                         <div class="col-md-4 pl-1">
                                             <div class="form-group">
                                                 <label for="exampleInputEmail1">Email address (disabled)</label>
-                                                <input type="email" class="form-control" disabled="" placeholder="Email">
+                                                <input type="email" class="form-control" disabled="" placeholder="{{auth()->user()->email}}">
                                             </div>
                                         </div>
                                     </div>
 
                                     <div class="row">
-                                    <div class="col-md-6 pr-1">
-                                        <div class="form-group">
-                                            <label>Tipo de doação</label>
-                                            <select class="form-control" id="tipo" name="tipo" type="text">
-                                                    <option>Doação de sangue</option>
-                                                    <option>Medula óssea</option>
-                                            </select>
-                                        
+                                        <div class="col-md-6 pr-1">
+                                            <div class="form-group">
+                                                <label>Tipo de doação</label>
+                                                <select class="form-control" id="tipoDoacao" name="tipoDoacao" type="text">
+                                                        <option>Doação de sangue</option>
+                                                        <option>Medula óssea</option>
+                                                </select>
+                                            
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-md-6 pl-1">
-                                        <div class="form-group">
-                                            <label>Posto de coleta</label>
-                                            <select class="form-control" id="tipo" name="tipo" type="text">
-                                                <option>Todos</option>    
-                                                <option>Hemopac</option>
-                                                <option>Uncisal</option>
-                                            </select>
+                                        <div class="col-md-6 pl-1">
+                                            <div class="form-group">
+                                                <label>Posto de coleta</label>
+                                                <select class="form-control" id="localDoacao" name="localDoacao" type="text">
+                                                    <option>Todos</option>    
+                                                    <option>Hemopac</option>
+                                                    <option>Uncisal</option>
+                                                </select>
+                                            </div>
                                         </div>
-                                    </div>
+                                    
                                     </div>
                                     
                                     <div class="row">
-                                    <div class="col-md-4 pr-1">
-                                        <div class="form-group">
-                                            <label for="disponibilidade">Dia e hora</label>
-                                            <input class="form-control" type="datetime-local" id="disponibilidade" name="disponibilidade">
+                                        <div class="col-md-4 pr-1">
+                                            <div class="form-group">
+                                                <label for="disponibilidade">Dia e hora</label>
+                                                <input class="form-control" type="datetime-local" id="disponibilidade" name="disponibilidade">
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-md-4 px-1">
-                                        <div class="form-group">
-                                            <label>Country</label>
-                                            <input type="text" class="form-control" placeholder="Country" value="Australia">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4 pl-1">
-                                        <div class="form-group">
-                                            <label>Postal Code</label>
-                                            <input type="number" class="form-control" placeholder="ZIP Code">
-                                        </div>
-                                    </div>
-                                    </div>
-
-                                    <div class="row">
-                                        <div class="col-md-12">
+                                        <div class="col-md-8">
                                             <div class="form-group">
                                                 <label>Observações</label>
-                                                <textarea class="form-control textarea">Oh so, your weak rhyme You doubt I'll bother, reading into it</textarea>
+                                                <textarea class="form-control textarea" name="observacoes" id="observacoes"></textarea>
                                             </div>
                                         </div>
                                     </div>
@@ -193,55 +170,3 @@
 
 @endsection
 
-
-
-
-{{-- @extends('layouts.app')
-
-@section('body')
-    <h1> Disponibilidade para doação </h1>
-    
-    <div class="card border">
-        <div class="card-body">
-            <h5 class= "card-title"> Inserir, editar e apagar disponibilidade para doação</h5>
-            <table class="table table-ordered table-hover">
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Nome</th>
-                        <th>Tipo sanguíneo</th>
-                        <th>Tipo de doação</th>
-                        <th>Data</th>
-                        <th>Hora</th>
-                        <th>Ações</th>
-                        
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach ($dispo as $disp)
-                        <tr>
-                            <td>{{$disp->id}}</td>
-                            <td>{{$disp->usuario}}</td>
-                            <td>{{$disp->tipoSangue}}</td>
-                            <td>{{$disp->tipoDoacao}}</td>
-                            <td>{{ date('d-m-Y', strtotime($disp->disponibilidade))}}</td>
-                            <td>{{ date('H:i', strtotime($disp->disponibilidade))}}</td>
-                            <td>
-                                <a href="/disponibilidade/editar/{{$disp->id}}" class="btn btn-sm btn-primary">Editar</a>
-                                <a href="/disponibilidade/apagar/{{$disp->id}}" class="btn btn-sm btn-danger">Apagar</a>
-                            </td>
-                        </tr>
-                    @endforeach
-                </tbody>
-            </table>
-        </div>
-    
-    </div>
-
-    <div class="card-footer">
-        <a href="/disponibilidade/novo" class="btn btn-sm btn-primary" role="button">Novo</a>
-    
-    </div>
-    
-
-@endsection --}}

@@ -26,7 +26,7 @@
                                     </div>
                                     <div class="col-7 col-md-8">
                                         <div class="numbers">
-                                            <p class="card-category">Capacity</p>
+                                            <p class="card-category">Agendamentos</p>
                                             <p class="card-title">150GB
                                             <p>
                                         </div>
@@ -36,7 +36,7 @@
                             <div class="card-footer ">
                                 <hr>
                                 <div class="stats">
-                                    <i class="fa fa-refresh"></i> Update Now
+                                    <i class="fa fa-calendar-o"></i> Agendar agora
                                 </div>
                             </div>
                         </div>

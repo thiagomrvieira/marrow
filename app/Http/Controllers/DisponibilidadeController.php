@@ -45,10 +45,12 @@ class DisponibilidadeController extends Controller
         $dispo = new Disponibilidade();
         $dispo->usuario = auth()->user()->name;
         $dispo->tipoSangue = auth()->user()->tipo;
-        $dispo->tipoDoacao = $request->input('tipo');
+        $dispo->tipoDoacao = $request->input('tipoDoacao');
+        $dispo->localDoacao = $request->input('localDoacao');
         $dispo->disponibilidade = $request->input('disponibilidade');
+        $dispo->observacoes = $request->input('observacoes');
         $dispo->save();
-        return redirect('disponibilidade');
+        return redirect('agendamento');
 
     }
 
