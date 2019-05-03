@@ -18,28 +18,42 @@
                                 <p class="description text-center">
                                     Caso não tenha uma conta
                                     <br> 
-                                    voce pode criar <a href="#"><b> aqui </b></a>
+                                    você pode criar <a href="#"><b> aqui </b></a>
                                 </p>
 
                                 <!-- Form inicio-->
-                                <form action="/agendamento" method="POST">    
+                                <form method="POST" action="{{ route('login') }}">    
                                     <div class="row">
                                         <div class="col-md-6 pr-1">
                                             <div class="form-group">
-                                                <label for="disponibilidade">Login</label>
-                                                <input class="form-control" type="text" id="disponibilidade" name="disponibilidade">
+                                                <label for="email">Login</label>
+                                                <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus>
+
+                                                @if ($errors->has('email'))
+                                                    <span class="invalid-feedback" role="alert">
+                                                        <strong>{{ $errors->first('email') }}</strong>
+                                                    </span>
+                                                @endif
+                                            
+                                            
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label>Senha</label>
-                                                <input class="form-control" type="text" id="disponibilidade" name="disponibilidade">
+                                                <label for="password">Senha</label>
+                                                <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
+
+                                                @if ($errors->has('password'))
+                                                    <span class="invalid-feedback" role="alert">
+                                                        <strong>{{ $errors->first('password') }}</strong>
+                                                    </span>
+                                                @endif
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="update ml-auto mr-auto">
-                                            <button type="submit" class="btn btn-primary btn-round">Entrar</button>
+                                            <button type="submit" class="btn btn-primary btn-round">{{ __('Login') }}</button>
                                         </div>
                                     </div>
                                 </form>
