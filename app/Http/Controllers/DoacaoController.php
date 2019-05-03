@@ -18,6 +18,13 @@ class DoacaoController extends Controller
         //
     }
 
+
+    public function log()
+    {
+        return view('log');
+    }
+
+
     /**
      * Show the form for creating a new resource.
      *

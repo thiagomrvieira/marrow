@@ -106,3 +106,6 @@ Route::prefix('doacao')->middleware('auth')->group(function(){
     Route::get('/apagar/{id}', 'DoacaoController@destroy'); 
 
 });
+
+//login - DEV
+Route::get('/log', 'DoacaoController@log');
