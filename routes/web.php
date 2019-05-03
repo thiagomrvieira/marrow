@@ -97,7 +97,7 @@ Route::prefix('usuarios')->middleware('auth')->group(function(){
 
 // -- DOAÇÕES --
 
-Route::prefix('doacao')->middleware('auth')->group(function(){
+Route::prefix('doacoes')->middleware('auth')->group(function(){
     Route::get('/', 'DoacaoController@index');
     Route::get('/novo', 'DoacaoController@create');
     Route::post('/', 'DoacaoController@store');

@@ -1,46 +1,103 @@
-@extends('layouts.app')
+@extends('layouts.dash')
 
 @section('body')
-    <h1> Postos de Coleta</h1>
-    
-    <div class="card border">
-        <div class="card-body">
-            <h5 class= "card-title"> Inserir, editar e apagar postos de coleta</h5>
-            <table class="table table-ordered table-hover">
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Nome</th>
-                        <th>Endereço</th>
-                        <th>Telefone</th>
-                        <th>Ações</th>
-                        
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach ($postos as $posto)
-                        <tr>
-                            <td>{{$posto->id}}</td>
-                            <td>{{$posto->nome}}</td>
-                            <td>{{$posto->endereco}}</td>
-                            <td>{{$posto->telefone}}</td>
-                            
-                            <td>
-                                <a href="/postos/editar/{{$posto->id}}" class="btn btn-sm btn-primary">Editar</a>
-                                <a href="/postos/apagar/{{$posto->id}}" class="btn btn-sm btn-danger">Apagar</a>
-                            </td>
-                        </tr>
-                    @endforeach
-                </tbody>
-            </table>
-        </div>
-    
-    </div>
+    <div class="wrapper ">
+        
+        <!-- Sidebar -->
+        @component('sidebar')
+        @endcomponent
+      
+      
+        <div class="main-panel">
+            <!-- Navbar -->
+            @component('navbar')
+            @endcomponent
+            
+            <div class="content">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title"> Suas doações </h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <thead class=" text-primary">
+                                            <th>
+                                                Nome
+                                            </th>
+                                            <th>
+                                                Tipo de doação
+                                            </th>
+                                            <th>
+                                                Posto
+                                            </th>
+                                            <th>
+                                                Data
+                                            </th>
+                                            <th>
+                                                Hora
+                                            </th>
+                                            <th>
+                                                Observações
+                                            </th>
+                                        </thead>
+                                        <tbody>
+                                        {{-- @foreach ($dispo as $disp)
+                                            @if ($disp->usuario == auth()->user()->name." ".auth()->user()->sobrenome)
+                                                
+                                                <tr>
+                                                    <td>
+                                                        {{$disp->usuario}}
+                                                    </td>
+                                                    <td>
+                                                        {{$disp->tipoSangue}}
+                                                    </td>
+                                                    <td>
+                                                        {{$disp->tipoDoacao}}
+                                                    </td>
+                                                    <td>
+                                                        {{ date('d-m-Y', strtotime($disp->disponibilidade))}}
+                                                    </td>
+                                                    <td>
+                                                        {{ date('H:i', strtotime($disp->disponibilidade))}}
+                                                    </td>
+                                                    <td>
+                                                        {{$disp->observacoes}}
+                                                    </td>
+                                                
+                                                </tr>
 
-    <div class="card-footer">
-        <a href="/postos/novo" class="btn btn-sm btn-primary" role="button">Novo posto</a>
-    
+                                            @endif
+                                        
+                                            
+                                        @endforeach --}}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="update ml-auto mr-auto">
+                        <button type="submit" class="btn btn-secondary btn-round">Gerar relatório</button>
+                    </div>
+                </div>
+            
+            </div><!-- Content -->
+
+            
+            <!-- footer -->
+            @component('footer')
+            @endcomponent
+      
+        </div>
     </div>
     
+
 
 @endsection
+
