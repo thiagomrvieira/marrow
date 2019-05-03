@@ -9,7 +9,7 @@
                     <div class="col-md-8 container">
                         <div class="card card-user">
                             <div class="image">
-                                <img src="{{asset('/img/damir-bosnjak.jpg')}}" alt="...">  
+                                <img src="{{asset('/img/bg5.jpg')}}" alt="...">  
                             </div>
                         
                             <div class="card-body">
@@ -17,6 +17,14 @@
                                     <img class="avatar border-gray" src="{{asset('/img/default-avatar.png')}}" alt="..."> 
                                     <h5 class="title">Crie a sua conta</h5>
                                 </div>
+                                
+                                <p class="description text-center">
+                                    Já tem uma conta?
+                                    <br> 
+                                    Faça login <a href="/login"><b> aqui </b></a>
+                                </p>
+                                
+                                
                                 <form method="POST" action="{{ route('register') }}">
                                     @csrf
                                     

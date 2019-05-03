@@ -15,6 +15,11 @@
         <input type="text" class="form-control" name="endereco" id="endereco" required>
     </div>
     <div class="form-group">
+        <label for="funcionamento">Horário de funcionamento</label>
+        <input type="text" class="form-control" name="funcionamento" id="funcionamento" required>
+    </div>
+
+    <div class="form-group">
         <label for="telefone">Telefone</label>
         <input type="text" class="form-control" name="telefone" id="telefone" required>
     </div>

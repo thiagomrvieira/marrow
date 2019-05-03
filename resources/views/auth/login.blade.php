@@ -18,7 +18,7 @@
                                 <p class="description text-center">
                                     Caso não tenha uma conta
                                     <br> 
-                                    você pode criar <a href="#"><b> aqui </b></a>
+                                    você pode criar <a href="/register"><b> aqui </b></a>
                                 </p>
 
                                 <!-- Form inicio-->

@@ -82,7 +82,9 @@
       });
     </script>
 
-
+    @hasSection('javascript')
+      @yield('javascript')
+    @endif
 </body>
 
 

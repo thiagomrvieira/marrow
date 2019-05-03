@@ -43,6 +43,7 @@ class PostosController extends Controller
         $posto = new posto();
         $posto->nome = $request->input('nome');
         $posto->endereco = $request->input('endereco');
+        $posto->funcionamento = $request->input('funcionamento');
         $posto->telefone = $request->input('telefone');
         $posto->save();
         return redirect('postos');

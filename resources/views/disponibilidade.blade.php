@@ -45,26 +45,33 @@
                                         </thead>
                                         <tbody>
                                         @foreach ($dispo as $disp)
-                                            <tr>
-                                                <td>
-                                                    {{$disp->usuario}}
-                                                </td>
-                                                <td class="text-center">
-                                                    {{$disp->tipoSangue}}
-                                                </td>
-                                                <td>
-                                                    {{$disp->tipoDoacao}}
-                                                </td>
-                                                <td class="text-center">
-                                                    {{ date('d-m-Y', strtotime($disp->disponibilidade))}}
-                                                </td>
-                                                <td class="text-center">
-                                                    {{ date('H:i', strtotime($disp->disponibilidade))}}
-                                                </td>
-                                                <td>
-                                                    {{$disp->observacoes}}
-                                                </td>
-                                            </tr>
+                                            @if ($disp->usuario == auth()->user()->name." ".auth()->user()->sobrenome)
+                                                
+                                                <tr>
+                                                    <td>
+                                                        {{$disp->usuario}}
+                                                    </td>
+                                                    <td>
+                                                        {{$disp->tipoSangue}}
+                                                    </td>
+                                                    <td>
+                                                        {{$disp->tipoDoacao}}
+                                                    </td>
+                                                    <td>
+                                                        {{ date('d-m-Y', strtotime($disp->disponibilidade))}}
+                                                    </td>
+                                                    <td>
+                                                        {{ date('H:i', strtotime($disp->disponibilidade))}}
+                                                    </td>
+                                                    <td>
+                                                        {{$disp->observacoes}}
+                                                    </td>
+                                                
+                                                </tr>
+
+                                            @endif
+                                        
+                                            
                                         @endforeach
                                         </tbody>
                                     </table>

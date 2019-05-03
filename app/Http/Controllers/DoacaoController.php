@@ -19,10 +19,7 @@ class DoacaoController extends Controller
     }
 
 
-    public function log()
-    {
-        return view('log');
-    }
+
 
 
     /**

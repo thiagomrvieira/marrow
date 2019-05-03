@@ -30,7 +30,7 @@
           </a>
         </li>
         <li>
-          <a href="./map.html">
+          <a href="/postos">
             <i class="nc-icon nc-pin-3"></i>
             <p>Postos de coleta</p>
           </a>
@@ -48,9 +48,9 @@
           </a>
         </li>
         <li>
-          <a href="./tables.html">
-            <i class="nc-icon nc-tile-56"></i>
-            <p>Table List</p>
+          <a href="/doacoes">
+            <i class="fa fa-bar-chart"></i>
+            <p>Relatório de doações</p>
           </a>
         </li>
         <li>

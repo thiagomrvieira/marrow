@@ -20,7 +20,7 @@ class CreateDisponibilidadesTable extends Migration
             $table->string('tipoSangue')->nullable();
             $table->string('localDoacao')->nullable();
             $table->dateTime('disponibilidade');
-            $table->longText('observacoes');
+            $table->longText('observacoes')->nullable();
 
             $table->timestamps();
         });

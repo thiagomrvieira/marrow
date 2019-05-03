@@ -6,11 +6,10 @@ use Illuminate\Http\Request;
 
 use App\Disponibilidade;
 
-//use App\Auth;
 
-class DisponibilidadeController extends Controller
+class DashboardController extends Controller
 {
-   /**
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -18,10 +17,7 @@ class DisponibilidadeController extends Controller
     public function index()
     {
         $dispo = Disponibilidade::all();
-        return view('disponibilidade', compact('dispo'));
-        
-
-         
+        return view('index', compact('dispo'));
     }
 
     /**
@@ -31,7 +27,7 @@ class DisponibilidadeController extends Controller
      */
     public function create()
     {
-        return view('disponibilidadeNovo');
+        //
     }
 
     /**
@@ -42,16 +38,7 @@ class DisponibilidadeController extends Controller
      */
     public function store(Request $request)
     {
-        $dispo = new Disponibilidade();
-        $dispo->usuario = auth()->user()->name." ".auth()->user()->sobrenome;
-        $dispo->tipoSangue = auth()->user()->tipoSangue;
-        $dispo->tipoDoacao = $request->input('tipoDoacao');
-        $dispo->localDoacao = $request->input('localDoacao');
-        $dispo->disponibilidade = $request->input('disponibilidade');
-        $dispo->observacoes = $request->input('observacoes');
-        $dispo->save();
-        return redirect('agendamento');
-
+        //
     }
 
     /**
@@ -73,11 +60,7 @@ class DisponibilidadeController extends Controller
      */
     public function edit($id)
     {
-        $dispo = Disponibilidade::find($id);
-        if (isset($dispo)) {
-            return view('disponibilidadeEditar', compact('dispo'));
-        }
-        
+        //
     }
 
     /**
@@ -89,15 +72,7 @@ class DisponibilidadeController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $dispo = Disponibilidade::find($id);
-        if (isset($dispo)) {
-            $dispo->tipoDoacao = $request->input('tipo');
-            if(!empty('disponibilidade')){
-                $dispo->disponibilidade = $request->input('disponibilidade');
-            }
-            $dispo->save();
-            return redirect('disponibilidade');
-        }
+        //
     }
 
     /**
@@ -108,11 +83,6 @@ class DisponibilidadeController extends Controller
      */
     public function destroy($id)
     {
-        $dispo = Disponibilidade::find($id);
-        if (isset($dispo)) {
-            $dispo->delete();
-            return redirect('disponibilidade');
-            
-        }
+        //
     }
 }

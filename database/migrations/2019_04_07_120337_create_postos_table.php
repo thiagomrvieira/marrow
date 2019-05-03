@@ -17,6 +17,7 @@ class CreatePostosTable extends Migration
             $table->bigIncrements('id');
             $table->string('nome');
             $table->longText('endereco');
+            $table->time('funcionamento');
             $table->char('telefone');
             $table->timestamps();
         });

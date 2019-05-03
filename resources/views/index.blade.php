@@ -21,13 +21,13 @@
                                 <div class="row">
                                     <div class="col-5 col-md-4">
                                         <div class="icon-big text-center icon-warning">
-                                            <i class="nc-icon nc-globe text-warning"></i>
+                                            <i class="nc-icon nc-calendar-60 text-primary"></i>
                                         </div>
                                     </div>
                                     <div class="col-7 col-md-8">
                                         <div class="numbers">
-                                            <p class="card-category">Agendamentos</p>
-                                            <p class="card-title">150GB
+                                            <p class="card-category">Doações <br> agendadas</p>
+                                            <p class="card-title">{{$dispo->count()}}
                                             <p>
                                         </div>
                                     </div>
@@ -36,7 +36,7 @@
                             <div class="card-footer ">
                                 <hr>
                                 <div class="stats">
-                                    <i class="fa fa-calendar-o"></i> Agendar agora
+                                    <a href="/agendamento"> <i class="fa fa-calendar-o"></i>Ver agenda </a>
                                 </div>
                             </div>
                         </div>
@@ -47,13 +47,13 @@
                                 <div class="row">
                                     <div class="col-5 col-md-4">
                                         <div class="icon-big text-center icon-warning">
-                                            <i class="nc-icon nc-money-coins text-success"></i>
+                                            <i class="fa fa-check-square-o text-success"></i>
                                         </div>
                                     </div>
                                     <div class="col-7 col-md-8">
                                         <div class="numbers">
-                                            <p class="card-category">Revenue</p>
-                                            <p class="card-title">$ 1,345
+                                            <p class="card-category">Doações <br> efetuadas</p>
+                                            <p class="card-title">5
                                             <p>
                                         </div>
                                     </div>
@@ -62,7 +62,7 @@
                             <div class="card-footer ">
                                 <hr>
                                 <div class="stats">
-                                    <i class="fa fa-calendar-o"></i> Last day
+                                    <i class="fa fa-bar-chart"></i> Ver relatório
                                 </div>
                             </div>
                         </div>
@@ -73,12 +73,12 @@
                             <div class="row">
                                 <div class="col-5 col-md-4">
                                     <div class="icon-big text-center icon-warning">
-                                        <i class="nc-icon nc-vector text-danger"></i>
+                                        <i class="fa fa-exclamation-triangle text-warning"></i>
                                     </div>
                                 </div>
                                 <div class="col-7 col-md-8">
                                     <div class="numbers">
-                                        <p class="card-category">Errors</p>
+                                        <p class="card-category">Alertas <br> registrados</p>
                                         <p class="card-title">23
                                         <p>
                                     </div>
@@ -88,7 +88,7 @@
                         <div class="card-footer ">
                             <hr>
                             <div class="stats">
-                                <i class="fa fa-clock-o"></i> In the last hour
+                                <i class="fa fa-exclamation-triangle"></i> Ver alertas
                             </div>
                         </div>
                     </div>
@@ -99,13 +99,13 @@
                             <div class="row">
                                 <div class="col-5 col-md-4">
                                     <div class="icon-big text-center icon-warning">
-                                        <i class="nc-icon nc-favourite-28 text-primary"></i>
+                                        <i class="nc-icon nc-favourite-28 text-danger"></i>
                                     </div>
                                 </div>
                                 <div class="col-7 col-md-8">
                                     <div class="numbers">
-                                        <p class="card-category">Followers</p>
-                                        <p class="card-title">+45K
+                                        <p class="card-category">Vidas <br> salvas</p>
+                                        <p class="card-title">+8
                                         <p>
                                     </div>
                                 </div>
@@ -114,7 +114,7 @@
                         <div class="card-footer ">
                             <hr>
                             <div class="stats">
-                                <i class="fa fa-refresh"></i> Update now
+                                <i class="fa fa-search"></i> Saiba mais
                             </div>
                         </div>
                     </div>
