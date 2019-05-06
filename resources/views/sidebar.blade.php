@@ -62,7 +62,7 @@
         <li class="active-pro">
           <a href="./upgrade.html">
             <i class="fa fa-file"></i>
-            <p>Atestado</p>
+            <p>Atestado </p>
           </a>
         </li>
       </ul>
