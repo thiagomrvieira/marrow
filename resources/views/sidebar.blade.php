@@ -38,13 +38,13 @@
         <li>
           <a href="./notifications.html">
             <i class="nc-icon nc-bell-55"></i>
-            <p>Notifications</p>
+            <p>Notificações</p>
           </a>
         </li>
         <li>
           <a href="./user.html">
             <i class="nc-icon nc-single-02"></i>
-            <p>User Profile</p>
+            <p>Perfil</p>
           </a>
         </li>
         <li>
@@ -56,13 +56,13 @@
         <li>
           <a href="./typography.html">
             <i class="nc-icon nc-caps-small"></i>
-            <p>Typography</p>
+            <p>Instruções</p>
           </a>
         </li>
         <li class="active-pro">
           <a href="./upgrade.html">
-            <i class="nc-icon nc-spaceship"></i>
-            <p>Upgrade to PRO</p>
+            <i class="fa fa-file"></i>
+            <p>Atestado</p>
           </a>
         </li>
       </ul>
