@@ -107,5 +107,10 @@ Route::prefix('doacoes')->middleware('auth')->group(function(){
 
 });
 
+Route::get('/perfil', function(){
+    return view('perfil');
+});
+
+
 //login - DEV
 Route::get('/log', 'DoacaoController@log');

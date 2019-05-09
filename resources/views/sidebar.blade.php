@@ -42,7 +42,7 @@
           </a>
         </li>
         <li>
-          <a href="./user.html">
+          <a href="/perfil">
             <i class="nc-icon nc-single-02"></i>
             <p>Perfil</p>
           </a>
