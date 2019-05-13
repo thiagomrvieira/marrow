@@ -102,7 +102,7 @@
                                         <div class="col-md-3 px-1">
                                             <div class="form-group">
                                                 <label>Tipo sanguíneo (disabled)</label>
-                                                <input type="text" class="form-control" disabled="" placeholder="tipoSangue" value="{{auth()->user()->tipo}}">
+                                                <input type="text" class="form-control" disabled="" placeholder="tipoSangue" value="{{auth()->user()->tipoSangue}}">
                                             </div>
                                         </div>
                                         <div class="col-md-4 pl-1">
