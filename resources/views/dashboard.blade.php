@@ -62,7 +62,7 @@
                             <div class="card-footer ">
                                 <hr>
                                 <div class="stats">
-                                    <i class="fa fa-bar-chart"></i> Ver relatório
+                                    <a href="/doacoes"> <i class="fa fa-bar-chart"></i> Ver relatório </a>
                                 </div>
                             </div>
                         </div>
@@ -88,7 +88,7 @@
                         <div class="card-footer ">
                             <hr>
                             <div class="stats">
-                                <i class="fa fa-exclamation-triangle"></i> Ver alertas
+                                <a href="/alertas"> <i class="fa fa-exclamation-triangle"></i> Ver alertas </a>
                             </div>
                         </div>
                     </div>
@@ -114,7 +114,7 @@
                         <div class="card-footer ">
                             <hr>
                             <div class="stats">
-                                <i class="fa fa-search"></i> Saiba mais
+                                <a href="#"> <i class="fa fa-search"></i> Saiba mais </a>
                             </div>
                         </div>
                     </div>

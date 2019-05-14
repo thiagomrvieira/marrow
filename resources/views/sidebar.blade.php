@@ -18,7 +18,7 @@
     <div class="sidebar-wrapper">
       <ul class="nav">
         <li class="active ">
-          <a href="/">
+          <a href="/dashboard">
             <i class="nc-icon nc-chart-bar-32"></i>
             <p>Dashboard</p>
           </a>
@@ -36,9 +36,9 @@
           </a>
         </li>
         <li>
-          <a href="./notifications.html">
-            <i class="nc-icon nc-bell-55"></i>
-            <p>Notificações</p>
+          <a href="/alertas">
+            <i class="fa fa-exclamation-triangle"></i>
+            <p>Alertas</p>
           </a>
         </li>
         <li>

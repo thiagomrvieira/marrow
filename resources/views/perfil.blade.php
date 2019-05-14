@@ -56,7 +56,7 @@
                         </div>
                       </div>
                     </div>
-                    <div class="card">
+                    <!-- <div class="card">
                       <div class="card-header">
                         <h4 class="card-title">Team Members</h4>
                       </div>
@@ -121,12 +121,12 @@
                           </li>
                         </ul>
                       </div>
-                    </div>
+                    </div> -->
                   </div>
                   <div class="col-md-8">
                     <div class="card card-user">
                       <div class="card-header">
-                        <h5 class="card-title">Edit Profile</h5>
+                        <h5 class="card-title">Editar Perfil</h5>
                       </div>
                       <div class="card-body">
                         <form method="POST" action="{{ route('register') }}">
@@ -292,7 +292,7 @@
 
                             <div class="row">
                                 <div class="update ml-auto mr-auto">
-                                    <button type="submit" class="btn btn-primary btn-round">{{ __('Register') }}</button>
+                                    <button type="submit" class="btn btn-primary btn-round">{{ __('Salvar') }}</button>
                                 </div>
                             </div>
                         </form>                        

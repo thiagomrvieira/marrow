@@ -11,7 +11,6 @@
 |
 */
 
-Route::get('/', 'DashboardController@index');
 
 
 
@@ -44,10 +43,22 @@ Route::prefix('usuario')->group(function(){
     });  
 });
 
+// -- DASHBOARD --
+
+Route::prefix('dashboard')->middleware('auth')->group(function(){
+    Route::get('/', 'DashboardController@index');
+    // Route::get('/novo', 'PostosController@create');
+    // Route::post('/', 'PostosController@store');
+    // Route::get('/editar/{id}', 'PostosController@edit'); 
+    // Route::post('/{id}', 'PostosController@update'); 
+    // Route::get('/apagar/{id}', 'PostosController@destroy'); 
+
+});
+
 
 // -- POSTOS --
 
-Route::prefix('postos')->group(function(){
+Route::prefix('postos')->middleware('auth')->group(function(){
     Route::get('/', 'PostosController@index');
     Route::get('/novo', 'PostosController@create');
     Route::post('/', 'PostosController@store');
@@ -59,7 +70,7 @@ Route::prefix('postos')->group(function(){
 
 // -- INSTRUÇÕES PARA DOAÇÃO --
 
-Route::prefix('instrucoes')->group(function(){
+Route::prefix('instrucoes')->middleware('auth')->group(function(){
     Route::get('/', 'InstrucoesController@index');
     Route::get('/novo', 'InstrucoesController@create');
     Route::post('/', 'InstrucoesController@store');
@@ -107,9 +118,33 @@ Route::prefix('doacoes')->middleware('auth')->group(function(){
 
 });
 
-Route::get('/perfil', function(){
-    return view('perfil');
+
+// -- PERFIL --
+
+Route::prefix('perfil')->middleware('auth')->group(function(){
+    Route::get('/', 'PerfilController@index');
+    // Route::get('/novo', 'DoacaoController@create');
+    // Route::post('/', 'DoacaoController@store');
+    // Route::get('/editar/{id}', 'DoacaoController@edit'); 
+    // Route::post('/{id}', 'DoacaoController@update'); 
+    // Route::get('/apagar/{id}', 'DoacaoController@destroy'); 
+
 });
+
+
+
+// -- PERFIL --
+
+Route::prefix('alertas')->middleware('auth')->group(function(){
+    Route::get('/', 'AlertaController@index');
+    // Route::get('/novo', 'DoacaoController@create');
+    // Route::post('/', 'DoacaoController@store');
+    // Route::get('/editar/{id}', 'DoacaoController@edit'); 
+    // Route::post('/{id}', 'DoacaoController@update'); 
+    // Route::get('/apagar/{id}', 'DoacaoController@destroy'); 
+
+});
+
 
 
 //login - DEV

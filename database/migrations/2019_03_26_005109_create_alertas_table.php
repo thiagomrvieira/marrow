@@ -15,8 +15,10 @@ class CreateAlertasTable extends Migration
     {
         Schema::create('alertas', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->char('tipo');
+            $table->char('tipo_alerta');
+            $table->char('tipo_sangue');
             $table->float('quantidade');
+            $table->string('posto');
             $table->boolean('status');
             $table->timestamps();
         });

@@ -4,10 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Disponibilidade;
-
-
-class DashboardController extends Controller
+class PerfilController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +13,7 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        $dispo = Disponibilidade::all();
-        return view('dashboard', compact('dispo'));
+        return view('perfil');
     }
 
     /**
