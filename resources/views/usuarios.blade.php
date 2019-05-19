@@ -5,7 +5,7 @@
     
     <div class="card border">
         <div class="card-body">
-            <h5 class= "card-title"> Inserir, editar e apagar disponibilidade para doação</h5>
+            <h5 class= "card-title"> Inserir, editar e apagar agendamento para doação</h5>
             <table class="table table-ordered table-hover">
                 <thead>
                     <tr>
@@ -25,8 +25,8 @@
                             <td>{{$user->tipo}}</td>
                             <td>{{$user->email}}</td>
                             <td>
-                                <a href="/disponibilidade/editar/{{$user->id}}" class="btn btn-sm btn-primary">Editar</a>
-                                <a href="/disponibilidade/apagar/{{$user->id}}" class="btn btn-sm btn-danger">Apagar</a>
+                                <a href="/agendamento/editar/{{$user->id}}" class="btn btn-sm btn-primary">Editar</a>
+                                <a href="/agendamento/apagar/{{$user->id}}" class="btn btn-sm btn-danger">Apagar</a>
                             </td>
                         </tr>
                     @endforeach

@@ -4,11 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Disponibilidade;
+use App\Agendamento;
 
 //use App\Auth;
 
-class DisponibilidadeController extends Controller
+class AgendamentoController extends Controller
 {
    /**
      * Display a listing of the resource.
@@ -17,8 +17,8 @@ class DisponibilidadeController extends Controller
      */
     public function index()
     {
-        $dispo = Disponibilidade::all();
-        return view('disponibilidade', compact('dispo'));
+        $dispo = Agendamento::all();
+        return view('agendamento', compact('dispo'));
         
 
          
@@ -31,7 +31,7 @@ class DisponibilidadeController extends Controller
      */
     public function create()
     {
-        return view('disponibilidadeNovo');
+        return view('agendamentoNovo');
     }
 
     /**
@@ -42,12 +42,12 @@ class DisponibilidadeController extends Controller
      */
     public function store(Request $request)
     {
-        $dispo = new Disponibilidade();
+        $dispo = new Agendamento();
         $dispo->usuario = auth()->user()->name." ".auth()->user()->sobrenome;
         $dispo->tipoSangue = auth()->user()->tipoSangue;
         $dispo->tipoDoacao = $request->input('tipoDoacao');
         $dispo->localDoacao = $request->input('localDoacao');
-        $dispo->disponibilidade = $request->input('disponibilidade');
+        $dispo->agendamento = $request->input('agendamento');
         $dispo->observacoes = $request->input('observacoes');
         $dispo->save();
         return redirect('agendamento');
@@ -75,7 +75,7 @@ class DisponibilidadeController extends Controller
     {
         $dispo = Disponibilidade::find($id);
         if (isset($dispo)) {
-            return view('disponibilidadeEditar', compact('dispo'));
+            return view('dagendamentoEditar', compact('dispo'));
         }
         
     }
@@ -92,11 +92,11 @@ class DisponibilidadeController extends Controller
         $dispo = Disponibilidade::find($id);
         if (isset($dispo)) {
             $dispo->tipoDoacao = $request->input('tipo');
-            if(!empty('disponibilidade')){
-                $dispo->disponibilidade = $request->input('disponibilidade');
+            if(!empty('agendamento')){
+                $dispo->agendamento = $request->input('agendamento');
             }
             $dispo->save();
-            return redirect('disponibilidade');
+            return redirect('agendamento');
         }
     }
 
@@ -108,10 +108,10 @@ class DisponibilidadeController extends Controller
      */
     public function destroy($id)
     {
-        $dispo = Disponibilidade::find($id);
+        $dispo = Agendamento::find($id);
         if (isset($dispo)) {
             $dispo->delete();
-            return redirect('disponibilidade');
+            return redirect('agendamento');
             
         }
     }

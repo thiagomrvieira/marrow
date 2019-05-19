@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateDoacaoTable extends Migration
+class CreateAgendamentosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,13 @@ class CreateDoacaoTable extends Migration
      */
     public function up()
     {
-        Schema::create('doacao', function (Blueprint $table) {
+        Schema::create('agendamentos', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('tipo');
-            $table->integer('instrucao_id');
-            $table->integer('agendamento_id');
-            $table->longText('observacoes');
+            $table->integer('user_id')->nullable();
+            $table->string('tipo');
+            $table->integer('posto_id')->nullable();
+            $table->dateTime('data');
+            $table->longText('observacoes')->nullable();
             $table->timestamps();
         });
     }
@@ -30,6 +31,6 @@ class CreateDoacaoTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('doacao');
+        Schema::dropIfExists('agendamentos');
     }
 }

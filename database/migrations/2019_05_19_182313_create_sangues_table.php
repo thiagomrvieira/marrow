@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePostosTable extends Migration
+class CreateSanguesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,11 @@ class CreatePostosTable extends Migration
      */
     public function up()
     {
-        Schema::create('postos', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('nome');
-            $table->longText('endereco');
-            $table->time('funcionamento');
-            $table->char('telefone');
+        Schema::create('sangues', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('tipo', 5);
+            $table->string('recebe');
+            $table->string('doa');		
             $table->timestamps();
         });
     }
@@ -30,6 +29,6 @@ class CreatePostosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('postos');
+        Schema::dropIfExists('sangues');
     }
 }

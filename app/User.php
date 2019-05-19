@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'sobrenome', 'dataNasc', 'tipoSangue', 'email', 'endereco', 'cidade', 'pais', 'cep', 'sobre', 'password',
+        'name', 'data_nasc', 'sangue_id', 'email', 'endereco_id', 'sobre', 'password',
     ];
 
     /**
@@ -36,4 +36,9 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function sangues(){
+        return $this->belongsTo('App\Sangue');
+        // return $this->hasOne(Endereco::class);
+    }
 }

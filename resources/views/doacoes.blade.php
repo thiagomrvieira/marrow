@@ -58,10 +58,10 @@
                                                         {{$disp->tipoDoacao}}
                                                     </td>
                                                     <td>
-                                                        {{ date('d-m-Y', strtotime($disp->disponibilidade))}}
+                                                        {{ date('d-m-Y', strtotime($disp->agendamento))}}
                                                     </td>
                                                     <td>
-                                                        {{ date('H:i', strtotime($disp->disponibilidade))}}
+                                                        {{ date('H:i', strtotime($disp->agendamento))}}
                                                     </td>
                                                     <td>
                                                         {{$disp->observacoes}}

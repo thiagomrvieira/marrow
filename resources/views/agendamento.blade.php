@@ -58,10 +58,10 @@
                                                         {{$disp->tipoDoacao}}
                                                     </td>
                                                     <td>
-                                                        {{ date('d-m-Y', strtotime($disp->disponibilidade))}}
+                                                        {{ date('d-m-Y', strtotime($disp->agendamento))}}
                                                     </td>
                                                     <td>
-                                                        {{ date('H:i', strtotime($disp->disponibilidade))}}
+                                                        {{ date('H:i', strtotime($disp->agendamento))}}
                                                     </td>
                                                     <td>
                                                         {{$disp->observacoes}}
@@ -140,8 +140,8 @@
                                     <div class="row">
                                         <div class="col-md-4 pr-1">
                                             <div class="form-group">
-                                                <label for="disponibilidade">Dia e hora</label>
-                                                <input class="form-control" type="datetime-local" id="disponibilidade" name="disponibilidade">
+                                                <label for="agendamento">Dia e hora</label>
+                                                <input class="form-control" type="datetime-local" id="agendamento" name="agendamento">
                                             </div>
                                         </div>
                                         <div class="col-md-8">

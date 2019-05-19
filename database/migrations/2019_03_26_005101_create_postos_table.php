@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateDoacaoTable extends Migration
+class CreatePostosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,14 @@ class CreateDoacaoTable extends Migration
      */
     public function up()
     {
-        Schema::create('doacao', function (Blueprint $table) {
+        Schema::create('postos', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('tipo');
-            $table->integer('instrucao_id');
+            $table->string('nome');
+            $table->string('tipo');
+            $table->string('horario');
+            $table->string('telefone');
             $table->integer('agendamento_id');
-            $table->longText('observacoes');
+            $table->integer('endereco_id');
             $table->timestamps();
         });
     }
@@ -30,6 +32,6 @@ class CreateDoacaoTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('doacao');
+        Schema::dropIfExists('postos');
     }
 }

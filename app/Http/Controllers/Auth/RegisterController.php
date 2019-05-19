@@ -8,6 +8,9 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 
+use App\Sangue;
+
+
 class RegisterController extends Controller
 {
     /*
@@ -63,17 +66,25 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        $endereco = new Endereco();
+        $endereco->rua = $request->input('rua');
+        $endereco->bairro = $request->input('bairro');
+        $endereco->numero = $request->input('numero');
+        $endereco->cidade = $request->input('cidade');
+        $endereco->uf = $request->input('uf');
+        $endereco->pais = $request->input('pais');
+        $endereco->cep = $request->input('cep');
+        $endereco->complemento = $request->input('complemento');
+        $endereco->save();
+        
+
         return User::create([
             'name' => $data['name'],
-            'sobrenome' => $data['sobrenome'],
-            'dataNasc' => $data['dataNasc'],
-            'tipoSangue' => $data['tipoSangue'],
-            'endereco' => $data['endereco'],
-            'cidade' => $data['cidade'],
-            'pais' => $data['pais'],
-            'cep' => $data['cep'],
-            'sobre' => $data['sobre'],
+            'data_nasc' => $data['data_nasc'],
+            'sangue_id' => $data['sangue_id'],
             'email' => $data['email'],
+            'endereco_id' => $data['endereco_id'],
+            'sobre' => $data['sobre'],
             'password' => Hash::make($data['password']),
         ]);
     }

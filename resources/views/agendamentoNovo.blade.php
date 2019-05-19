@@ -1,10 +1,10 @@
 @extends('layouts.app')
 
 @section('body')
-<h1> Cadastrar disponibilidade para doação</h1>
+<h1> Cadastrar agendamento para doação</h1>
 
 
-<form action="/disponibilidade" method="POST">
+<form action="/agendamento" method="POST">
     @csrf
     <div class="form-group">
         <label for="tipo">Tipo de doação</label>
@@ -14,13 +14,13 @@
         </select>
     </div>
     <div class="form-group">
-        <label for="disponibilidade">Dia e hora</label>
-        <input class="form-control" type="datetime-local" id="disponibilidade" name="disponibilidade">
+        <label for="agendamento">Dia e hora</label>
+        <input class="form-control" type="datetime-local" id="agendamento" name="agendamento">
         
     </div>
 
 
     <button type="submit" class="btn btn-primary">Enviar</button>
-    <input type="button" name="Cancel" class="btn btn-danger" value="Cancel" onclick="window.location = '/disponibilidade' " />
+    <input type="button" name="Cancel" class="btn btn-danger" value="Cancel" onclick="window.location = '/agendamento' " />
 </form>
 @endsection

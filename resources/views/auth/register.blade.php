@@ -29,46 +29,37 @@
                                     @csrf
                                     
                                     <div class="row">
-                                        <div class="col-md-6 pr-1">
-                                        <div class="form-group">
-                                            <label>Nome</label>
-                                            <input placeholder="José" id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required autofocus>
-                                            @if ($errors->has('name'))
-                                                <span class="invalid-feedback" role="alert">
-                                                    <strong>{{ $errors->first('name') }}</strong>
-                                                </span>
-                                            @endif
+                                        <div class="col-md-12 pr-1">
+                                            <div class="form-group">
+                                                <label>Nome</label>
+                                                <input placeholder="José da Silva" id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required autofocus>
+                                                @if ($errors->has('name'))
+                                                    <span class="invalid-feedback" role="alert">
+                                                        <strong>{{ $errors->first('name') }}</strong>
+                                                    </span>
+                                                @endif
+                                            </div>
                                         </div>
-                                        </div>
-                                        <div class="col-md-6 pl-1">
-                                        <div class="form-group">
-                                            <label>Sobrenome</label>
-                                            <input id="sobrenome" name="sobrenome" type="text" class="form-control" placeholder="Silva" required>
-                                        </div>
-                                        </div>
+                                    
                                     </div>
 
                                     <div class="row">
                                     
                                         <div class="col-md-4 pr-1">
                                         <div class="form-group">
-                                            <label for="dataNasc">Data de nascimento</label>
-                                            <input class="form-control" type="date" id="dataNasc" name="dataNasc" required>
+                                            <label for="data_nasc">Data de nascimento</label>
+                                            <input class="form-control" type="date" id="data_nasc" name="data_nasc" required>
                                         </div>
                                         </div>
                                         <div class="col-md-3 px-1">
                                         <div class="form-group">
-                                            <label for="tipoSangue">Tipo sanguíneo</label>
-                                            <select class="form-control" id="tipoSangue" name="tipoSangue" required >
-                                                <option>Não sei</option>
-                                                <option>A+</option>
-                                                <option>A-</option>
-                                                <option>B+</option>
-                                                <option>B-</option>
-                                                <option>AB+</option>
-                                                <option>AB-</option>
-                                                <option>O+</option>
-                                                <option>O-</option>
+                                            <label for="sangue_id">Tipo sanguíneo</label>
+                                            <select class="form-control" id="sangue_id" name="sangue_id" required >
+                                                <option value="" >Não sei</option>
+                                                {{ $sangue = \App\Sangue::all() }}                                               
+                                                @foreach($sangue as $s)
+                                                    <option value="{{$s->id}}"> {{$s->tipo}} </option>   
+                                                @endforeach
 
                                             </select>
                                         </div>
@@ -91,33 +82,66 @@
                                     </div>
 
                                     <div class="row">
-                                        <div class="col-md-12">
+                                        <div class="col-md-9 pr-1">
                                         <div class="form-group">
                                             <label>Endereço</label>
-                                            <input type="text" id="endereco" name="endereco" class="form-control" placeholder="Rua José Silva, Centro" required>
+                                            <input type="text" id="rua" name="rua" class="form-control" placeholder="Rua José Silva" required>
                                         </div>
                                         </div>
+                                        <div class="col-md-3 pl-1">
+                                        <div class="form-group">
+                                            <label>Bairro</label>
+                                            <input type="text" id="bairro" name="bairro" class="form-control" placeholder="Ponta clara" required>
+                                        </div>
+                                        </div>
+                                        
                                     </div>
                                     <div class="row">
-                                        <div class="col-md-4 pr-1">
+                                        
+                                        <div class="col-md-2 pr-1">
+                                        <div class="form-group">
+                                            <label>Número</label>
+                                            <input type="number" id="numero" name="numero" class="form-control" placeholder="102" required>
+                                        </div>
+                                        </div>
+                                        
+                                        <div class="col-md-4 px-1">
                                         <div class="form-group">
                                             <label>Cidade</label>
                                             <input type="text" id="cidade" name="cidade" class="form-control" placeholder="Maceió" required>
                                         </div>
                                         </div>
-                                        <div class="col-md-4 px-1">
+                                        <div class="col-md-2 px-1">
+                                        <div class="form-group">
+                                            <label>UF</label>
+                                            <input type="text" id="uf" name="uf" class="form-control" placeholder="Al" required>
+                                        </div>
+                                        </div>                                        
+                                        <div class="col-md-4 pl-1">
                                         <div class="form-group">
                                             <label>País</label>
                                             <input type="text" id="pais" name="pais" class="form-control" placeholder="Brasil" required>
                                         </div>
                                         </div>
-                                        <div class="col-md-4 pl-1">
+                                    </div>
+
+                                    
+                                    <div class="row">
+                                        <div class="col-md-4 pr-1">
                                         <div class="form-group">
                                             <label>Cep</label>
                                             <input type="number" id="cep" name="cep" class="form-control" placeholder="57000-000" required> 
                                         </div>
                                         </div>
+                                        <div class="col-md-8 pl-1">
+                                        <div class="form-group">
+                                            <label>Complemento</label>
+                                            <textarea class="form-control textarea" id="sobre" name="sobre">Bloco, quadra, etc</textarea>
+                                        </div>
+                                        </div>
                                     </div>
+
+                                    
                                     <div class="row">
                                         <div class="col-md-12">
                                         <div class="form-group">
