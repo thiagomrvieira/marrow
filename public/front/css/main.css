@@ -3863,3 +3863,10 @@ input, select, textarea {
 		}
 
 	}
+
+	#icon-home{
+		opacity : 0.9;
+		height: 50%;
+		width: 50%;
+		margin-top: 6rem;
+	}

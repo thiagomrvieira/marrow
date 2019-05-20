@@ -7,23 +7,26 @@
 			<section class="intro">
 				<header>
 					<h1>Nome do APP</h1>
-					<p>Doação de sangue e Madula óssea</p>
+					<p>Doação de sangue e Medula óssea</p>
 					<ul class="actions">
 						<li><a href="#first" class="arrow scrolly"><span class="label">Next</span></a></li>
 					</ul>
 				</header>
-				<div class="content">
-					<span class="image fill" data-position="center"><img src="{{asset('img/blood.jpeg')}}" alt="" /></span>
+				<div class="content" >
+					<span class="image fill" data-position="center"><img id="icon-home" src="{{asset('img/icon.png')}}" alt="" /></span>
 				</div>
 			</section>
 
 		<!-- Section -->
 			<section id="first">
 				<header>
-					<h2>Sobre nós</h2>
+					<h2>Sobre o (nome do projeto)</h2>
 				</header>
 				<div class="content">
-					<p><strong>Nome do software</strong> é um software voltado para doação de sangue e medula óssea. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor amet fermentum. Nullam venenatis erat id vehicula ultrices sed ultricies condimentum. Magna sed etiam consequat, et lorem adipiscing sed nulla. Volutpat nisl et tempus et dolor libero, feugiat magna tempus, sed et lorem adipiscing.</p>
+					<p><strong>(Nome do projeto)</strong> é um software voltado para doação de sangue e medula óssea. 
+						O projeto tem como objetivo principal aproximar doadores de postos de coleta através módulos 
+						desenvolvidos para agilizar e informar o doador à respeito de procedimentos, 
+						incluindo um feedback à respeito de doações já efetuadas, alertas de baixo estoque e muito mais.</p>
 					<span class="image main"><img src="{{asset('img/pic02.jpg')}}" alt="" /></span>
 				</div>
 			</section>
@@ -34,39 +37,45 @@
 					<h2>Como funciona</h2>
 				</header>
 				<div class="content">
-					<p><strong>Etiam tristique libero</strong> eu nibh porttitor amet fermentum. Nullam venenatis erat id vehicula ultrices sed ultricies condimentum.</p>
+					<p>Ao criar um perfil de doador no <strong>(nome do projeto)</strong> você terá acesso às principais funcionalidades:</p>
 					<ul class="feature-icons">
-						<li class="icon fa-gear">Informações sobre procedimentos</li>
-						<li class="icon fa-laptop">Agendamento de doação</li>
-						<li class="icon fa-bolt">Emissão de alertas</li>
-						<li class="icon fa-signal">Relatório de doações</li>
-						<li class="icon fa-map-marker">Postos de coleta</li>
-						<li class="icon fa-code">Nibh amet venenatis</li>
+						<li class="icon fa-calendar">Agendamento de doação</li>
+						<li class="icon fa-info-circle">Informações sobre procedimentos</li>
+						<li class="icon fa-exclamation-triangle">Emissão de alertas</li>
+						<li class="icon fa-file">Relatório de doações</li>
+						<li class="icon fa-map-marker">Localização de postos de coleta próximos</li>
+						<li class="icon fa-comment">Feedback sobre doações efetuadas</li>
 					</ul>
-					<p>Vehicula ultrices sed ultricies condimentum. Magna sed etiam consequat, et lorem adipiscing sed nulla. Volutpat nisl et tempus et dolor libero, feugiat magna tempus, sed et lorem adipiscing.</p>
+					<p>Você pode começar usar agora mesmo. Crie uma conta <a href="/register">aqui</a></p>
 				</div>
 			</section>
 
 		<!-- Section -->
 			<section>
 				<header>
-					<h2>Doação de sangue</h2>
+					<h2>Doações</h2>
 				</header>
 				<div class="content">
-					<p><strong>Integer mollis egestas</strong> nam maximus erat id euismod egestas. Pellentesque sapien ac quam. Lorem ipsum dolor sit nullam.</p>
+					<p> <strong> Menos de 2% </strong>da população brasileira doa sangue regularmente.
+						<br> No Brasil, segundo o Ministério da Saúde, 1,8% da população doa sangue com 
+						regularidade. Esse número fica um pouco abaixo dos 2% ideais definidos 
+						pela Organização Pan-Americana de Saúde (OPAS). Ou seja, por aqui, os bancos de 
+						sangue operam no limite. </p>
 
 					<!-- Section -->
 						<section>
 							<header>
 								<h3>Doação de sangue</h3>
-								<p>Vehicula ultrices dolor amet ultricies et condimentum. Magna sed etiam consequat, et lorem adipiscing sed dolor sit amet, consectetur amet do eiusmod tempor incididunt  ipsum suspendisse ultrices gravida.</p>
+								<p>É um procedimento praticamente indolor, pelo qual um doador tem seu sangue coletado para uso subsequente em uma transfusão de sangue. 
+									<br> Em uma única doação você pode salvar até <strong>3 vidas </strong>. 
+									<br> Agende sua doação <a href="/agendamento"> aqui</a>.
+								</p>
 							</header>
 							<div class="content">
 								<div class="gallery">
-									<a href="images/gallery/fulls/01.jpg" class="landscape"><img src="{{asset('img/gallery/thumbs/01.jpg')}}" alt="" /></a>
-									<a href="images/gallery/fulls/02.jpg"><img src="{{asset('img/gallery/thumbs/02.jpg')}}" alt="" /></a>
-									<a href="images/gallery/fulls/03.jpg"><img src="{{asset('img/gallery/thumbs/03.jpg')}}" alt="" /></a>
-									<a href="images/gallery/fulls/04.jpg" class="landscape"><img src="{{asset('img/gallery/thumbs/04.jpg')}}" alt="" /></a>
+									<a href="images/gallery/fulls/02.jpg"><img src="{{asset('img/blood-01.jpeg')}}" alt="" /></a>
+									<a href="images/gallery/fulls/03.jpg"><img src="{{asset('img/blood-03.jpeg')}}" alt="" /></a>
+									<a href="images/gallery/fulls/04.jpg" class="landscape"><img src="{{asset('img/blood-02.jpeg')}}" alt="" /></a>
 								</div>
 							</div>
 						</section>
@@ -75,7 +84,7 @@
 						<section>
 							<header>
 								<h3>Doação de Medula óssea</h3>
-								<p>Aenean ornare velit lacus, ac varius enim ullamcorper eu. Proin aliquam sed facilisis ante interdum congue. Integer mollis, nisl amet convallis, porttitor magna ullamcorper, amet mauris. Ut magna finibus nisi nec lacinia ipsum maximus.</p>
+								<p>Doação de medula óssea consiste na substituição de uma medula óssea doente, ou deficitária, por células normais da medula óssea, com o objetivo de reconstituição de uma nova medula saudável.</p>
 							</header>
 							<div class="content">
 								<div class="gallery">
