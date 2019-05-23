@@ -27,7 +27,7 @@
                                     <div class="col-7 col-md-8">
                                         <div class="numbers">
                                             <p class="card-category">Doações <br> agendadas</p>
-                                            <p class="card-title">{{$dispo->count()}}
+                                            <p class="card-title">{{$agendamentos->count()}}
                                             <p>
                                         </div>
                                     </div>

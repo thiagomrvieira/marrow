@@ -37,8 +37,8 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function sangues(){
-        return $this->belongsTo('App\Sangue');
+    public function sangue(){
+        return $this->hasOne('App\Sangue');
         // return $this->hasOne(Endereco::class);
     }
 }
