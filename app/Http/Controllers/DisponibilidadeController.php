@@ -42,14 +42,13 @@ class AgendamentoController extends Controller
      */
     public function store(Request $request)
     {
-        $dispo = new Agendamento();
-        $dispo->usuario = auth()->user()->name." ".auth()->user()->sobrenome;
-        $dispo->tipoSangue = auth()->user()->tipoSangue;
-        $dispo->tipoDoacao = $request->input('tipoDoacao');
-        $dispo->localDoacao = $request->input('localDoacao');
-        $dispo->agendamento = $request->input('agendamento');
-        $dispo->observacoes = $request->input('observacoes');
-        $dispo->save();
+        $agend = new Agendamento();
+        $agend->user_id = auth()->user()->id;
+        $agend->posto_id = $request->input('posto');
+        $agend->tipo = $request->input('tipoDoacao');
+        $agend->data = $request->input('data');        
+        $agend->observacoes = $request->input('observacoes');
+        $agend->save();
         return redirect('agendamento');
 
     }

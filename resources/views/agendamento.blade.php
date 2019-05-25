@@ -102,7 +102,7 @@
                                         <div class="col-md-3 px-1">
                                             <div class="form-group">
                                                 <label>Tipo sanguíneo (disabled)</label>
-                                                <input type="text" class="form-control" disabled="" placeholder="tipoSangue" value="{{auth()->user()->tipoSangue}}">
+                                                <input type="text" class="form-control" disabled="" placeholder="tipoSangue" value="{{auth()->user()->sangue->tipo}}">
                                             </div>
                                         </div>
                                         <div class="col-md-4 pl-1">
@@ -127,10 +127,15 @@
                                         <div class="col-md-6 pl-1">
                                             <div class="form-group">
                                                 <label>Posto de coleta</label>
-                                                <select class="form-control" id="localDoacao" name="localDoacao" type="text">
-                                                    <option>Todos</option>    
+                                                <select class="form-control" id="posto" name="posto" type="text">
+                                                    {{ $postos = \App\Posto::all() }}                                               
+                                                    @foreach($postos as $p)
+                                                        <option value="{{$p->id}}"> {{$p->nome}} </option>   
+                                                    @endforeach   
+                                                   
+                                                    <!-- <option>Todos</option>    
                                                     <option>Hemopac</option>
-                                                    <option>Uncisal</option>
+                                                    <option>Uncisal</option> -->
                                                 </select>
                                             </div>
                                         </div>
@@ -140,8 +145,8 @@
                                     <div class="row">
                                         <div class="col-md-4 pr-1">
                                             <div class="form-group">
-                                                <label for="agendamento">Dia e hora</label>
-                                                <input class="form-control" type="datetime-local" id="agendamento" name="agendamento">
+                                                <label for="data">Dia e hora</label>
+                                                <input class="form-control" type="datetime-local" id="data" name="data">
                                             </div>
                                         </div>
                                         <div class="col-md-8">

@@ -85,9 +85,9 @@ Route::prefix('instrucoes')->middleware('auth')->group(function(){
 // -- DISPONIBILIDADE --
 
 Route::prefix('agendamento')->middleware('auth')->group(function(){
-    Route::get('/', 'DisponibilidadeController@index');
+    Route::get('/', 'AgendamentoController@index');
     Route::get('/novo', 'DisponibilidadeController@create');
-    Route::post('/', 'DisponibilidadeController@store');
+    Route::post('/', 'AgendamentoController@store');
     Route::get('/editar/{id}', 'DisponibilidadeController@edit'); 
     Route::post('/{id}', 'DisponibilidadeController@update'); 
     Route::get('/apagar/{id}', 'DisponibilidadeController@destroy'); 

@@ -38,7 +38,7 @@ class User extends Authenticatable
     ];
 
     public function sangue(){
-        return $this->hasOne('App\Sangue');
+        return $this->belongsTo('App\Sangue');
 
         
     }
