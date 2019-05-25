@@ -9,4 +9,7 @@ class Agendamento extends Model
     public function posto(){
         return $this->belongsTo('App\Posto');
     }
+    public function user(){
+        return $this->belongsTo('App\User');
+    }
 }

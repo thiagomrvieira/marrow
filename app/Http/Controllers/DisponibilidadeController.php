@@ -17,8 +17,8 @@ class AgendamentoController extends Controller
      */
     public function index()
     {
-        $dispo = Agendamento::all();
-        return view('agendamento', compact('dispo'));
+        $agenda = Agendamento::all();
+        return view('agendamento', compact('agenda'));
         
 
          

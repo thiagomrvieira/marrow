@@ -44,27 +44,27 @@
                                             </th>
                                         </thead>
                                         <tbody>
-                                        @foreach ($dispo as $disp)
-                                            @if ($disp->usuario == auth()->user()->name." ".auth()->user()->sobrenome)
+                                        @foreach ($agenda as $a)
+                                            @if ($a->user->name == auth()->user()->name)
                                                 
                                                 <tr>
                                                     <td>
-                                                        {{$disp->usuario}}
+                                                        {{$a->user->name}}
                                                     </td>
                                                     <td>
-                                                        {{$disp->tipoSangue}}
+                                                        {{$a->user->sangue->tipo}}
                                                     </td>
                                                     <td>
-                                                        {{$disp->tipoDoacao}}
+                                                        {{$a->tipo}}
                                                     </td>
                                                     <td>
-                                                        {{ date('d-m-Y', strtotime($disp->agendamento))}}
+                                                        {{ date('d-m-Y', strtotime($a->data))}}
                                                     </td>
                                                     <td>
-                                                        {{ date('H:i', strtotime($disp->agendamento))}}
+                                                        {{ date('H:i', strtotime($a->data))}}
                                                     </td>
                                                     <td>
-                                                        {{$disp->observacoes}}
+                                                        {{$a->observacoes}}
                                                     </td>
                                                 
                                                 </tr>
