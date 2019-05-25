@@ -17,9 +17,11 @@ class CreateAgendamentosTable extends Migration
             $table->increments('id');
             $table->integer('user_id')->nullable();
             $table->foreign('user_id')->references('id')->on('users');
-            $table->string('tipo');
             $table->integer('posto_id')->nullable();
             $table->foreign('posto_id')->references('id')->on('postos');
+            $table->integer('doacao_id')->nullable();
+            $table->foreign('doacao_id')->references('id')->on('doacoes');
+            $table->string('tipo');
             $table->dateTime('data');
             $table->longText('observacoes')->nullable();
             $table->timestamps();

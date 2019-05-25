@@ -39,14 +39,12 @@ class User extends Authenticatable
 
     public function sangue(){
         return $this->hasOne('App\Sangue');
-<<<<<<< HEAD
+
         
     }
 
     public function endereco(){
         return $this->hasOne('App\Endereco');
-=======
-        // return $this->hasOne(Endereco::class);
->>>>>>> 765d014d13e946516f48b85a46bf6e6afc599451
+
     }
 }

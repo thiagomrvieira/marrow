@@ -19,8 +19,8 @@ class CreatePostosTable extends Migration
             $table->string('tipo');
             $table->string('horario');
             $table->string('telefone');
-            $table->integer('agendamento_id');
-            // $table->integer('endereco_id');
+            $table->integer('endereco_id')->unsigned();
+            $table->foreign('endereco_id')->references('id')->on('enderecos');
             $table->timestamps();
         });
     }

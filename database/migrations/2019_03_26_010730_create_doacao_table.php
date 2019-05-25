@@ -13,11 +13,12 @@ class CreateDoacaoTable extends Migration
      */
     public function up()
     {
-        Schema::create('doacao', function (Blueprint $table) {
+        Schema::create('doacoes', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('tipo');
             $table->integer('instrucao_id');
             $table->integer('agendamento_id');
+            $table->foreign('agendamento_id')->references('id')->on('agendamentos');
             $table->longText('observacoes');
             $table->timestamps();
         });
@@ -30,6 +31,6 @@ class CreateDoacaoTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('doacao');
+        Schema::dropIfExists('doacoes');
     }
 }
