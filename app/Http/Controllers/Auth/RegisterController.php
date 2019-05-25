@@ -9,6 +9,8 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 
 use App\Sangue;
+use App\Endereco;
+
 
 
 class RegisterController extends Controller

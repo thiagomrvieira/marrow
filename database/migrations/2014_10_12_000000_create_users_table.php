@@ -21,6 +21,7 @@ class CreateUsersTable extends Migration
             $table->foreign('sangue_id')->references('id')->on('sangues');
             $table->string('email')->unique();
             $table->integer('endereco_id');
+            $table->foreign('endereco_id')->references('id')->on('enderecos');
             $table->longText('sobre')->nullable(); 
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
