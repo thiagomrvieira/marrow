@@ -27,8 +27,8 @@
                                     <div class="col-7 col-md-8">
                                         <div class="numbers">
                                             <p class="card-category">Doações <br> agendadas</p>
-                                            <p class="card-title">{{$agendamentos->count()}}
-                                            <p>
+                                            <p class="card-title">{{ $agendamentos->where('user_id', auth()->user()->id)->count()}}
+                                            </p>
                                         </div>
                                     </div>
                                 </div>

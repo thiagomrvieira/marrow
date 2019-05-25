@@ -43,8 +43,8 @@
                                             @foreach ($postos as $posto)
                                                 <tr>
                                                     <td>{{$posto->nome}}</td>
-                                                    <td>{{$posto->endereco}}</td>
-                                                    <td>{{$posto->funcionamento}}</td>
+                                                    <td>{{$posto->endereco->rua .", ". $posto->endereco->numero .", ". $posto->endereco->bairro .", ". $posto->endereco->cidade}}</td>
+                                                    <td>{{$posto->horario}}</td>
                                                     <td>{{$posto->telefone}}</td>
                                                 </tr>
                                             @endforeach
