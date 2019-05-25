@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Disponibilidade;
+use App\Agendamento;
 
 
 class DashboardController extends Controller
@@ -16,8 +16,9 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        $dispo = Disponibilidade::all();
-        return view('dashboard', compact('dispo'));
+        $agendamentos = Agendamento::all();
+        return view('dashboard', compact('agendamentos'));
+        
     }
 
     /**

@@ -68,16 +68,7 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        $endereco = new Endereco();
-        $endereco->rua = $request->input('rua');
-        $endereco->bairro = $request->input('bairro');
-        $endereco->numero = $request->input('numero');
-        $endereco->cidade = $request->input('cidade');
-        $endereco->uf = $request->input('uf');
-        $endereco->pais = $request->input('pais');
-        $endereco->cep = $request->input('cep');
-        $endereco->complemento = $request->input('complemento');
-        $endereco->save();
+    
         
 
         return User::create([
@@ -85,7 +76,7 @@ class RegisterController extends Controller
             'data_nasc' => $data['data_nasc'],
             'sangue_id' => $data['sangue_id'],
             'email' => $data['email'],
-            'endereco_id' => $data['endereco_id'],
+            // 'endereco_id' => $data['endereco_id'],
             'sobre' => $data['sobre'],
             'password' => Hash::make($data['password']),
         ]);

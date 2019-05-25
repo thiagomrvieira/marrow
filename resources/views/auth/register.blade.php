@@ -81,7 +81,7 @@
                                         
                                     </div>
 
-                                    <div class="row">
+                                    {{-- <div class="row">
                                         <div class="col-md-9 pr-1">
                                         <div class="form-group">
                                             <label>Endereço</label>
@@ -139,7 +139,7 @@
                                             <textarea class="form-control textarea" id="sobre" name="sobre">Bloco, quadra, etc</textarea>
                                         </div>
                                         </div>
-                                    </div>
+                                    </div> --}}
 
                                     
                                     <div class="row">
