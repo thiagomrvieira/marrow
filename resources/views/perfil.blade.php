@@ -26,10 +26,10 @@
                           <a href="#">
                             <img class="avatar border-gray" src="{{asset('../img/mike.jpg')}}" alt="...">
 
-                            <h5 class="title">{{auth()->user()->name . " " . auth()->user()->sobrenome}}</h5>
+                            <h5 class="title">{{auth()->user()->name}}</h5>
                           </a>
                           <p class="description">
-                            @ {{strtolower(auth()->user()->sobrenome)}}
+                            @ {{strtolower(auth()->user()->name)}}
                           </p>
                         </div>
                         <p class="description text-center">
@@ -47,7 +47,7 @@
                               </h5>
                             </div>
                             <div class="col-lg-6 col-md-6 col-6 ml-auto mr-auto">
-                              <h5>2
+                              <h5>{{ auth()->user()->agendamento->count()}}
                                 <br>
                                 <small>Agendamentos</small>
                               </h5>
@@ -133,7 +133,7 @@
                             @csrf
                             
                             <div class="row">
-                                <div class="col-md-6 pr-1">
+                              <div class="col-md-12">
                                 <div class="form-group">
                                     <label>Nome</label>
                                     <input value="{{auth()->user()->name}}" id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" required autofocus>
@@ -143,13 +143,8 @@
                                         </span>
                                     @endif
                                 </div>
-                                </div>
-                                <div class="col-md-6 pl-1">
-                                <div class="form-group">
-                                    <label>Sobrenome</label>
-                                    <input id="sobrenome" name="sobrenome" type="text" class="form-control" value="{{auth()->user()->sobrenome}}" required>
-                                </div>
-                                </div>
+                              </div>
+                                
                             </div>
 
                             <div class="row">
@@ -236,7 +231,7 @@
                                 <div class="col-md-12">
                                 <div class="form-group">
                                     <label>Endereço</label>
-                                    <input type="text" id="endereco" name="endereco" class="form-control" value="{{auth()->user()->endereco}}" required>
+                                    <input type="text" id="endereco" name="endereco" class="form-control" value="{{auth()->user()->endereco_id}}" required>
                                 </div>
                                 </div>
                             </div>

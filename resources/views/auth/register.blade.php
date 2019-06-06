@@ -174,7 +174,7 @@
 
                                     <div class="row">
                                         <div class="update ml-auto mr-auto">
-                                            <button type="submit" class="btn btn-primary btn-round">{{ __('Register') }}</button>
+                                            <button type="submit" class="btn btn-primary btn-round">{{ __('Criar conta') }}</button>
                                         </div>
                                     </div>
                                 </form>

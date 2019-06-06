@@ -47,4 +47,9 @@ class User extends Authenticatable
         return $this->hasOne('App\Endereco');
 
     }
+
+    public function agendamento(){
+        return $this->hasMany('App\Agendamento');
+
+    }
 }

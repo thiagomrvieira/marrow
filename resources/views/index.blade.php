@@ -6,24 +6,24 @@
 		<!-- Intro -->
 			<section class="intro">
 				<header>
-					<h1>Nome do APP</h1>
+					<h1>Marrow</h1>
 					<p>Doação de sangue e Medula óssea</p>
 					<ul class="actions">
 						<li><a href="#first" class="arrow scrolly"><span class="label">Next</span></a></li>
 					</ul>
 				</header>
 				<div class="content" >
-					<span class="image fill" data-position="center"><img id="icon-home" src="{{asset('img/icon.png')}}" alt="" /></span>
+					<span class="image fill" data-position="center"><img id="icon-home" src="{{asset('img/blood-donation.png')}}" alt="" /></span>
 				</div>
 			</section>
 
 		<!-- Section -->
 			<section id="first">
 				<header>
-					<h2>Sobre o (nome do projeto)</h2>
+					<h2>Sobre o Marrow</h2>
 				</header>
 				<div class="content">
-					<p><strong>(Nome do projeto)</strong> é um software voltado para doação de sangue e medula óssea. 
+					<p><strong>Marrow</strong> é um software voltado para doação de sangue e medula óssea. 
 						O projeto tem como objetivo principal aproximar doadores de postos de coleta através módulos 
 						desenvolvidos para agilizar e informar o doador à respeito de procedimentos, 
 						incluindo um feedback à respeito de doações já efetuadas, alertas de baixo estoque e muito mais.</p>
@@ -37,7 +37,7 @@
 					<h2>Como funciona</h2>
 				</header>
 				<div class="content">
-					<p>Ao criar um perfil de doador no <strong>(nome do projeto)</strong> você terá acesso às principais funcionalidades:</p>
+					<p>Ao criar um perfil de doador no <strong>marrow</strong> você terá acesso às principais funcionalidades:</p>
 					<ul class="feature-icons">
 						<li class="icon fa-calendar">Agendamento de doação</li>
 						<li class="icon fa-info-circle">Informações sobre procedimentos</li>
