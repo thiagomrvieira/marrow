@@ -1,3 +1,4 @@
+
 @extends('layouts.dash')
 
 @section('body')
@@ -56,72 +57,7 @@
                         </div>
                       </div>
                     </div>
-                    <!-- <div class="card">
-                      <div class="card-header">
-                        <h4 class="card-title">Team Members</h4>
-                      </div>
-                      <div class="card-body">
-                        <ul class="list-unstyled team-members">
-                          <li>
-                            <div class="row">
-                              <div class="col-md-2 col-2">
-                                <div class="avatar">
-                                  <img src="../assets/img/faces/ayo-ogunseinde-2.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
-                                </div>
-                              </div>
-                              <div class="col-md-7 col-7">
-                                DJ Khaled
-                                <br />
-                                <span class="text-muted">
-                                  <small>Offline</small>
-                                </span>
-                              </div>
-                              <div class="col-md-3 col-3 text-right">
-                                <btn class="btn btn-sm btn-outline-success btn-round btn-icon"><i class="fa fa-envelope"></i></btn>
-                              </div>
-                            </div>
-                          </li>
-                          <li>
-                            <div class="row">
-                              <div class="col-md-2 col-2">
-                                <div class="avatar">
-                                  <img src="../assets/img/faces/joe-gardner-2.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
-                                </div>
-                              </div>
-                              <div class="col-md-7 col-7">
-                                Creative Tim
-                                <br />
-                                <span class="text-success">
-                                  <small>Available</small>
-                                </span>
-                              </div>
-                              <div class="col-md-3 col-3 text-right">
-                                <btn class="btn btn-sm btn-outline-success btn-round btn-icon"><i class="fa fa-envelope"></i></btn>
-                              </div>
-                            </div>
-                          </li>
-                          <li>
-                            <div class="row">
-                              <div class="col-md-2 col-2">
-                                <div class="avatar">
-                                  <img src="../assets/img/faces/clem-onojeghuo-2.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
-                                </div>
-                              </div>
-                              <div class="col-ms-7 col-7">
-                                Flume
-                                <br />
-                                <span class="text-danger">
-                                  <small>Busy</small>
-                                </span>
-                              </div>
-                              <div class="col-md-3 col-3 text-right">
-                                <btn class="btn btn-sm btn-outline-success btn-round btn-icon"><i class="fa fa-envelope"></i></btn>
-                              </div>
-                            </div>
-                          </li>
-                        </ul>
-                      </div>
-                    </div> -->
+                    
                   </div>
                   <div class="col-md-8">
                     <div class="card card-user">
@@ -152,60 +88,21 @@
                                 <div class="col-md-4 pr-1">
                                 <div class="form-group">
                                     <label for="dataNasc">Data de nascimento</label>
-                                    <input class="form-control" type="date" id="dataNasc" name="dataNasc" value="{{auth()->user()->dataNasc}}" required>
+                                    <input class="form-control" type="date" id="dataNasc" name="dataNasc" value="{{ \Carbon\Carbon::createFromDate(auth()->user()->dataNasc)->format('Y-m-d')}}" required>
                                 </div>
                                 </div>
                                 <div class="col-md-3 px-1">
                                 <div class="form-group">
                                     <label for="tipoSangue">Tipo sanguíneo</label>
                                     <select class="form-control" id="tipoSangue" name="tipoSangue" required >
-                                  
-                                      @if(auth()->user()->tipoSangue == "Não sei")
-                                        <option selected> Não sei </option>
-                                      @else
-                                        <option> Não sei </option>
-                                      @endif
-                                      
-                                      @if(auth()->user()->tipoSangue == "A+")
-                                        <option selected> A+ </option>
-                                      @else
-                                        <option> A+ </option>
-                                      @endif
-                                      @if(auth()->user()->tipoSangue == "A-")
-                                        <option selected> A- </option>
-                                      @else
-                                        <option> A- </option>
-                                      @endif
-                                      @if(auth()->user()->tipoSangue == "B+")
-                                        <option selected> B+ </option>
-                                      @else
-                                        <option> B+ </option>
-                                      @endif
-                                      @if(auth()->user()->tipoSangue == "B-")
-                                        <option selected> B- </option>
-                                      @else
-                                        <option> B- </option>
-                                      @endif
-                                      @if(auth()->user()->tipoSangue == "AB+")
-                                        <option selected> AB+ </option>
-                                      @else
-                                        <option> AB+ </option>
-                                      @endif
-                                      @if(auth()->user()->tipoSangue == "AB-")
-                                        <option selected> AB- </option>
-                                      @else
-                                        <option> AB- </option>
-                                      @endif
-                                      @if(auth()->user()->tipoSangue == "O+")
-                                        <option selected> O+ </option>
-                                      @else
-                                        <option> O+ </option>
-                                      @endif
-                                      @if(auth()->user()->tipoSangue == "O-")
-                                        <option selected> O- </option>
-                                      @else
-                                        <option> O- </option>
-                                      @endif
+                                      <option value="" >Não sei</option>
+                                        {{ $sangue = \App\Sangue::all() }}                                               
+                                        @foreach($sangue as $s)
+                                          @if($s->id == auth()->user()->sangue->id)
+                                            <option value="" selected> {{$s->tipo}} </option>         
+                                          @endif
+                                          <option value="{{$s->id}}"> {{$s->tipo}} </option>   
+                                        @endforeach
 
                                     </select>
                                 </div>

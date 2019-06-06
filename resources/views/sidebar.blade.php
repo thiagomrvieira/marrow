@@ -5,7 +5,7 @@
     <div class="logo">
       <a href="#" class="simple-text logo-mini">
         <div class="logo-image-small">
-          <img src="{{asset('img/blood-bag.png')}}">
+          <img src="{{asset('img/logo-small.png')}}">
         </div>
       </a>
       <a href="#" class="simple-text logo-normal">

@@ -146,7 +146,7 @@
                                         <div class="col-md-4 pr-1">
                                             <div class="form-group">
                                                 <label for="data">Dia e hora</label>
-                                                <input class="form-control" type="datetime-local" id="data" name="data">
+                                                <input class="form-control" type="datetime-local" id="data" name="data" required>
                                             </div>
                                         </div>
                                         <div class="col-md-8">
