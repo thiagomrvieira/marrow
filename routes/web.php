@@ -147,6 +147,7 @@ Route::prefix('alertas')->middleware('auth')->group(function(){
 
 });
 
+Route::post('/enderecos', 'EnderecoController@store');
 
 
 //login - DEV
