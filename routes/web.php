@@ -128,7 +128,7 @@ Route::prefix('perfil')->middleware('auth')->group(function(){
     // Route::get('/novo', 'DoacaoController@create');
     // Route::post('/', 'DoacaoController@store');
     // Route::get('/editar/{id}', 'DoacaoController@edit'); 
-    // Route::post('/{id}', 'DoacaoController@update'); 
+     Route::post('/{id}', 'PerfilController@update'); 
     // Route::get('/apagar/{id}', 'DoacaoController@destroy'); 
 
 });

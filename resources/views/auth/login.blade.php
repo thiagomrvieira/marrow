@@ -68,7 +68,7 @@
                                 <div class="button-container">
                                     <div class="row">
                                         <div class="col-lg-3 col-md-6 col-6 ml-auto">
-                                            <h5>12
+                                            <h5>{{ $sangue = \App\User::count() }}
                                                 <br>
                                                 <small>Usuários</small>
                                             </h5>

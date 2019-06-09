@@ -65,7 +65,7 @@
                         <h5 class="card-title">Editar Perfil</h5>
                       </div>
                       <div class="card-body">
-                        <form method="POST" action="{{ route('register') }}">
+                        <form method="POST" action="/perfil/{{auth()->user()->id}}">
                             @csrf
                             
                             <div class="row">
@@ -94,14 +94,13 @@
                                 <div class="col-md-3 px-1">
                                 <div class="form-group">
                                     <label for="tipoSangue">Tipo sanguíneo</label>
-                                    <select class="form-control" id="tipoSangue" name="tipoSangue" required >
+                                    <select class="form-control" id="sangue_id" name="sangue_id" required >
                                       <option value="" >Não sei</option>
                                         {{ $sangue = \App\Sangue::all() }}                                               
                                         @foreach($sangue as $s)
-                                          @if($s->id == auth()->user()->sangue->id)
-                                            <option value="" selected> {{$s->tipo}} </option>         
-                                          @endif
-                                          <option value="{{$s->id}}"> {{$s->tipo}} </option>   
+                                          <?php $tipo ?>
+                                          <option value="{{$s->id}}"> {{$s->tipo}} </option>
+                                          
                                         @endforeach
 
                                     </select>
