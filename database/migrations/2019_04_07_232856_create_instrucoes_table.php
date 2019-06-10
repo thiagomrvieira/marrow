@@ -16,6 +16,7 @@ class CreateInstrucoesTable extends Migration
         Schema::create('instrucoes', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('titulo');
+            $table->text('tipo_doacao');
             $table->longText('instrucoes');
             $table->timestamps();
         });
