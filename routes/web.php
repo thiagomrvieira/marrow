@@ -78,7 +78,8 @@ Route::prefix('instrucoes')->middleware('auth')->group(function(){
     Route::post('/', 'InstrucoesController@store');
     Route::get('/editar/{id}', 'InstrucoesController@edit'); 
     Route::post('/{id}', 'InstrucoesController@update'); 
-    Route::get('/apagar/{id}', 'InstrucoesController@destroy'); 
+    Route::get('/apagar/{id}', 'InstrucoesController@destroy');
+    Route::get('/{tipo}', 'InstrucoesController@show');
 
 });
 

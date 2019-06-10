@@ -19,18 +19,20 @@
                         <div class="card">
                             <div class="card-header">
                                 <h4 class="card-title"> Instruções para doação </h4>
-                                <p class="card-category"> Antes de efetuar uma doação verifique as instruções</p>
+                                <p class="card-category" style="text-transform: none;"> 
+                                    Antes de efetuar uma doação verifique as instruções para que o 
+                                    procedimento ocorra como recomendado
+                                </p>
 
                             </div>
                             <div class="card-body">
                                 <div class="row">
-                                    <div class="update ml-auto mr-auto">
-                                        <a href="#" class="btn btn-primary btn-round">Doação de sangue</a>
-                                    </div>
+                                    @foreach ($instrucoes as $inst)
+                                        <div class="ml-auto mr-auto">
+                                            <a href="/instrucoes/{{$inst->id}}" class="btn btn-primary btn-round">{{$inst->titulo}}</a>
+                                        </div>
+                                    @endforeach
 
-                                    <div class="update ml-auto mr-auto">
-                                        <a href="#" class="btn btn-primary btn-round">Doação de Medula óssea</a>
-                                    </div>
                                 </div>
                             </div>
                         </div>
