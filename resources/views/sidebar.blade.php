@@ -55,7 +55,7 @@
         </li>
         <li>
           <a href="/instrucoes">
-            <i class="nc-icon nc-caps-small"></i>
+            <i class="fa fa-book"></i>
             <p>Instruções</p>
           </a>
         </li>

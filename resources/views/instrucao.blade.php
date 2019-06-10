@@ -18,7 +18,7 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header">
-                            <h4 class="card-title"> Instruções para doação de {{$instrucoes->tipo_doacao}}</h4>
+                            <h4 class="card-title"> Instruções para {{$instrucoes->titulo}}</h4>
                                 <p class="card-category" style="text-transform: none;"> 
                                     Antes de efetuar uma doação verifique as instruções para que o 
                                     procedimento ocorra como recomendado
