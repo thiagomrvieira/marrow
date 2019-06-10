@@ -88,8 +88,8 @@
                                 <div class="col-md-4 pr-1">
                                 <div class="form-group">
                                     <label for="dataNasc">Data de nascimento</label>
-                                    <input class="form-control" type="date" id="dataNasc" name="dataNasc" value="{{ \Carbon\Carbon::createFromDate(auth()->user()->dataNasc)->format('Y-m-d')}}" required>
-                                </div>
+                                    <input class="form-control" type="date" id="dataNasc" name="dataNasc" value="{{ \Carbon\Carbon::createFromDate(auth()->user()->data_nasc)->format('Y-m-d')}}" required>
+                                  </div>
                                 </div>
                                 <div class="col-md-3 px-1">
                                 <div class="form-group">
@@ -98,8 +98,13 @@
                                       <option value="" >Não sei</option>
                                         {{ $sangue = \App\Sangue::all() }}                                               
                                         @foreach($sangue as $s)
-                                          <?php $tipo ?>
+                                          <?php $tipo = auth()->user()->sangue->tipo; ?>
+                                          
+                                          @if($tipo == $s->tipo)
+                                            <option value="{{$s->id}}" selected> {{$s->tipo}} </option>
+                                          @endif
                                           <option value="{{$s->id}}"> {{$s->tipo}} </option>
+                                          
                                           
                                         @endforeach
 
