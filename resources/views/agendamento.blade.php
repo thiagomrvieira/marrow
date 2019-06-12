@@ -25,13 +25,10 @@
                                     <table class="table">
                                         <thead class=" text-primary">
                                             <th>
-                                                Nome
-                                            </th>
-                                            <th>
-                                                Tipo sanguíneo
-                                            </th>
-                                            <th>
                                                 Tipo de doação
+                                            </th>
+                                            <th>
+                                                Local
                                             </th>
                                             <th>
                                                 Data
@@ -42,6 +39,9 @@
                                             <th>
                                                 Observações
                                             </th>
+                                            <th>
+                                                Ações
+                                            </th>
                                         </thead>
                                         <tbody>
                                         @foreach ($agenda as $a)
@@ -49,13 +49,10 @@
                                                 
                                                 <tr>
                                                     <td>
-                                                        {{$a->user->name}}
-                                                    </td>
-                                                    <td>
-                                                        {{$a->user->sangue->tipo}}
-                                                    </td>
-                                                    <td>
                                                         {{$a->tipo}}
+                                                    </td>
+                                                    <td>
+                                                        {{$a->posto->nome}}
                                                     </td>
                                                     <td>
                                                         {{ date('d-m-Y', strtotime($a->data))}}
@@ -66,7 +63,14 @@
                                                     <td>
                                                         {{$a->observacoes}}
                                                     </td>
-                                                
+                                                    <td>
+                                                    <a href="">
+                                                        <i class="fa fa-edit" style="font-size: 20px"></i>
+                                                    </a>
+                                                    <a href="">
+                                                        <i class="fa fa-trash" style="font-size: 20px"></i>
+                                                    </a>
+                                                    </td>
                                                 </tr>
 
                                             @endif

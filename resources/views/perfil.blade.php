@@ -133,7 +133,7 @@
                                   </div>
                               </div>
                               <div class="row">
-                                  <div class="col-md-4 pr-1">
+                                  <div class="col-m{{ $agendamentos->where('user_id', auth()->user()->id)->count()}}d-4 pr-1">
                                   <div class="form-group">
                                       <label>Cidade</label>
                                       <input type="text" id="cidade" name="cidade" class="form-control" value="{{auth()->user()->cidade}}" required>
