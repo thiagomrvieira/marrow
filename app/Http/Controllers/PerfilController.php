@@ -75,6 +75,7 @@ class PerfilController extends Controller
             $user->data_nasc = $request->input('dataNasc');
             $user->sangue_id = $request->input('sangue_id');
             $user->email = $request->input('email');
+            $user->sobre = $request->input('sobre');
             $user->save();
             return redirect('/perfil');
         }

@@ -17,8 +17,7 @@ class InstrucoesController extends Controller
     {
         $instrucoes = Instrucao::all();
         return view('instrucoes', compact('instrucoes'));
-
-    
+            
          
     }
 
@@ -56,7 +55,17 @@ class InstrucoesController extends Controller
      */
     public function show($id)
     {
-        //
+        $instrucoes = Instrucao::find($id);
+        if (isset( $instrucoes)) {
+            return view('instrucao', compact('instrucoes'));
+        }
+            
+        
+        
+
+      
+
+
     }
 
     /**

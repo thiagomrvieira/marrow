@@ -54,8 +54,8 @@
           </a>
         </li>
         <li>
-          <a href="./typography.html">
-            <i class="nc-icon nc-caps-small"></i>
+          <a href="/instrucoes">
+            <i class="fa fa-book"></i>
             <p>Instruções</p>
           </a>
         </li>

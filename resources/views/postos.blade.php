@@ -19,7 +19,7 @@
                         <div class="card card-plain">
                             <div class="card-header">
                                 <h4 class="card-title"> Postos de coleta</h4>
-                                <p class="card-category"> Postos de coleta da sua região</p>
+                                <p class="card-category" style="text-transform: none;"> Postos de coleta da sua região</p>
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">
