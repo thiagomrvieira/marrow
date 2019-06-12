@@ -60,9 +60,9 @@
           </a>
         </li>
         <li class="active-pro">
-          <a href="./upgrade.html">
+          <a href="/atestados">
             <i class="fa fa-file"></i>
-            <p>Atestado </p>
+            <p>Atestados </p>
           </a>
         </li>
       </ul>

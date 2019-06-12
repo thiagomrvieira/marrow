@@ -150,6 +150,10 @@ Route::prefix('alertas')->middleware('auth')->group(function(){
 
 Route::post('/enderecos', 'EnderecoController@store');
 
+Route::prefix('atestados')->middleware('auth')->group(function(){
+    Route::get('/', 'AtestadoController@index');
+});
+
 
 //login - DEV
 Route::get('/log', 'DoacaoController@log');
